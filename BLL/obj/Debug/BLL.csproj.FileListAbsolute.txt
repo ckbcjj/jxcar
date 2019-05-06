@@ -1,0 +1,4 @@
+E:\javawork\project\jxcar\BLL\bin\Debug\BLL.dll
+E:\javawork\project\jxcar\BLL\bin\Debug\BLL.pdb
+E:\javawork\project\jxcar\BLL\obj\Debug\BLL.dll
+E:\javawork\project\jxcar\BLL\obj\Debug\BLL.pdb
