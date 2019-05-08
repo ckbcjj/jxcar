@@ -11,7 +11,8 @@
     <RootNamespace>Teacher</RootNamespace>
     <AssemblyName>Teacher</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -34,69 +35,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v13.2">
-      <HintPath>..\Lib\DevExpress.BonusSkins.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Charts.v13.2.Core">
-      <HintPath>..\Lib\DevExpress.Charts.v13.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Data.v13.2">
-      <HintPath>..\Lib\DevExpress.Data.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Office.v13.2.Core">
-      <HintPath>..\Lib\DevExpress.Office.v13.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Printing.v13.2.Core">
-      <HintPath>..\Lib\DevExpress.Printing.v13.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.RichEdit.v13.2.Core">
-      <HintPath>..\Lib\DevExpress.RichEdit.v13.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Sparkline.v13.2.Core">
-      <HintPath>..\Lib\DevExpress.Sparkline.v13.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Utils.v13.2">
-      <HintPath>..\Lib\DevExpress.Utils.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Utils.v13.2.UI">
-      <HintPath>..\Lib\DevExpress.Utils.v13.2.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraBars.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraBars.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraCharts.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraCharts.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraCharts.v13.2.UI">
-      <HintPath>..\Lib\DevExpress.XtraCharts.v13.2.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraCharts.v13.2.Wizard">
-      <HintPath>..\Lib\DevExpress.XtraCharts.v13.2.Wizard.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraEditors.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraEditors.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraGrid.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraGrid.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraLayout.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraLayout.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraNavBar.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraPrinting.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraRichEdit.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraTreeList.v13.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraVerticalGrid.v13.2">
-      <HintPath>..\Lib\DevExpress.XtraVerticalGrid.v13.2.dll</HintPath>
-    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.1.UI, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.UI, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -179,8 +131,81 @@
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBlock.Designer.cs">
+      <DependentUpon>FrmBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangeBlock.Designer.cs">
+      <DependentUpon>FrmChangeBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangePwd.Designer.cs">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckResult.Designer.cs">
+      <DependentUpon>FrmCheckResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckScore.Designer.cs">
+      <DependentUpon>FrmCheckScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckSetting.Designer.cs">
+      <DependentUpon>FrmCheckSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmData.Designer.cs">
+      <DependentUpon>FrmData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditFault.Designer.cs">
+      <DependentUpon>FrmEditFault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditManager.Designer.cs">
+      <DependentUpon>FrmEditManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditUser.Designer.cs">
+      <DependentUpon>FrmEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFault.Designer.cs">
+      <DependentUpon>FrmFault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHisOscillogram.Designer.cs">
+      <DependentUpon>FrmHisOscillogram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManager.Designer.cs">
+      <DependentUpon>FrmManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModule.Designer.cs">
+      <DependentUpon>FrmModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuleEdit.Designer.cs">
+      <DependentUpon>FrmModuleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperateLog.Designer.cs">
+      <DependentUpon>FrmOperateLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOscillogram.Designer.cs">
+      <DependentUpon>FrmOscillogram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReg.Designer.cs">
+      <DependentUpon>FrmReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSetFault.Designer.cs">
+      <DependentUpon>FrmSetFault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSetting.Designer.cs">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -189,7 +214,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

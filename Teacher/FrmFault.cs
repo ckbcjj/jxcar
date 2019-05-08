@@ -19,28 +19,8 @@ namespace Teacher
 {
 
 
-    public class FrmFault : XtraForm
+    public partial class FrmFault : XtraForm
     {
-        private Bar bar2;
-        private BarDockControl barDockControlBottom;
-        private BarDockControl barDockControlLeft;
-        private BarDockControl barDockControlRight;
-        private BarDockControl barDockControlTop;
-        private BarLargeButtonItem barLargeButtonItem1;
-        private BarLargeButtonItem barLargeButtonItem2;
-        private BarLargeButtonItem barLargeButtonItem3;
-        private BarLargeButtonItem barLargeButtonItem4;
-        private BarManager barManager1;
-        private IContainer components;
-        private DataAccess da = new DataAccess();
-        private DataTable dt;
-        private GridColumn gridColumn1;
-        private GridColumn gridColumn2;
-        private GridColumn gridColumn3;
-        private GridColumn gridColumn4;
-        private GridColumn gridColumn5;
-        private GridControl gridControl1;
-        private GridView gridView1;
 
         public FrmFault()
         {
@@ -114,15 +94,6 @@ namespace Teacher
             this.gridControl1.DataSource = this.dt;
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (this.components != null))
-            {
-                this.components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
         private void FrmFault_Load(object sender, EventArgs e)
         {
             this.BindData();
@@ -151,155 +122,6 @@ namespace Teacher
                 }
             }
             return builder.ToString();
-        }
-
-        private void InitializeComponent()
-        {
-            this.components = new Container();
-            ComponentResourceManager manager = new ComponentResourceManager(typeof(FrmFault));
-            this.barManager1 = new BarManager(this.components);
-            this.bar2 = new Bar();
-            this.barLargeButtonItem1 = new BarLargeButtonItem();
-            this.barLargeButtonItem2 = new BarLargeButtonItem();
-            this.barLargeButtonItem3 = new BarLargeButtonItem();
-            this.barLargeButtonItem4 = new BarLargeButtonItem();
-            this.barDockControlTop = new BarDockControl();
-            this.barDockControlBottom = new BarDockControl();
-            this.barDockControlLeft = new BarDockControl();
-            this.barDockControlRight = new BarDockControl();
-            this.gridControl1 = new GridControl();
-            this.gridView1 = new GridView();
-            this.gridColumn2 = new GridColumn();
-            this.gridColumn3 = new GridColumn();
-            this.gridColumn4 = new GridColumn();
-            this.gridColumn5 = new GridColumn();
-            this.gridColumn1 = new GridColumn();
-            this.barManager1.BeginInit();
-            this.gridControl1.BeginInit();
-            this.gridView1.BeginInit();
-            base.SuspendLayout();
-            this.barManager1.AllowMoveBarOnToolbar = false;
-            this.barManager1.AllowQuickCustomization = false;
-            this.barManager1.Bars.AddRange(new Bar[] { this.bar2 });
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new BarItem[] { this.barLargeButtonItem1, this.barLargeButtonItem2, this.barLargeButtonItem3, this.barLargeButtonItem4 });
-            this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 5;
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new LinkPersistInfo[] { new LinkPersistInfo(this.barLargeButtonItem1), new LinkPersistInfo(this.barLargeButtonItem2), new LinkPersistInfo(this.barLargeButtonItem3), new LinkPersistInfo(this.barLargeButtonItem4) });
-            this.bar2.OptionsBar.DrawDragBorder = false;
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            this.barLargeButtonItem1.Caption = "增加故障点";
-            this.barLargeButtonItem1.Glyph = (Image) manager.GetObject("barLargeButtonItem1.Glyph");
-            this.barLargeButtonItem1.Id = 1;
-            this.barLargeButtonItem1.LargeGlyph = (Image) manager.GetObject("barLargeButtonItem1.LargeGlyph");
-            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
-            this.barLargeButtonItem1.ItemClick += new ItemClickEventHandler(this.barLargeButtonItem1_ItemClick);
-            this.barLargeButtonItem2.Caption = "编辑故障点";
-            this.barLargeButtonItem2.Glyph = (Image) manager.GetObject("barLargeButtonItem2.Glyph");
-            this.barLargeButtonItem2.Id = 2;
-            this.barLargeButtonItem2.LargeGlyph = (Image) manager.GetObject("barLargeButtonItem2.LargeGlyph");
-            this.barLargeButtonItem2.Name = "barLargeButtonItem2";
-            this.barLargeButtonItem2.ItemClick += new ItemClickEventHandler(this.barLargeButtonItem2_ItemClick);
-            this.barLargeButtonItem3.Caption = "删除故障点";
-            this.barLargeButtonItem3.Glyph = (Image) manager.GetObject("barLargeButtonItem3.Glyph");
-            this.barLargeButtonItem3.Id = 3;
-            this.barLargeButtonItem3.LargeGlyph = (Image) manager.GetObject("barLargeButtonItem3.LargeGlyph");
-            this.barLargeButtonItem3.Name = "barLargeButtonItem3";
-            this.barLargeButtonItem3.ItemClick += new ItemClickEventHandler(this.barLargeButtonItem3_ItemClick);
-            this.barLargeButtonItem4.Caption = "刷新";
-            this.barLargeButtonItem4.Glyph = (Image) manager.GetObject("barLargeButtonItem4.Glyph");
-            this.barLargeButtonItem4.Id = 4;
-            this.barLargeButtonItem4.LargeGlyph = (Image) manager.GetObject("barLargeButtonItem4.LargeGlyph");
-            this.barLargeButtonItem4.Name = "barLargeButtonItem4";
-            this.barLargeButtonItem4.Visibility = BarItemVisibility.Never;
-            this.barLargeButtonItem4.ItemClick += new ItemClickEventHandler(this.barLargeButtonItem4_ItemClick);
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = DockStyle.Top;
-            this.barDockControlTop.Location = new Point(0, 0);
-            this.barDockControlTop.Size = new Size(0x2a7, 60);
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = DockStyle.Bottom;
-            this.barDockControlBottom.Location = new Point(0, 0x1b2);
-            this.barDockControlBottom.Size = new Size(0x2a7, 0);
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = DockStyle.Left;
-            this.barDockControlLeft.Location = new Point(0, 60);
-            this.barDockControlLeft.Size = new Size(0, 0x176);
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = DockStyle.Right;
-            this.barDockControlRight.Location = new Point(0x2a7, 60);
-            this.barDockControlRight.Size = new Size(0, 0x176);
-            this.gridControl1.Dock = DockStyle.Fill;
-            this.gridControl1.Location = new Point(0, 60);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new Size(0x2a7, 0x176);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new BaseView[] { this.gridView1 });
-            this.gridView1.Columns.AddRange(new GridColumn[] { this.gridColumn2, this.gridColumn3, this.gridColumn4, this.gridColumn5, this.gridColumn1 });
-            this.gridView1.FocusRectStyle = DrawFocusRectStyle.RowFullFocus;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
-            this.gridView1.OptionsCustomization.AllowFilter = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridColumn2.Caption = "编号";
-            this.gridColumn2.FieldName = "Id";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 0x58;
-            this.gridColumn3.Caption = "故障点";
-            this.gridColumn3.FieldName = "Name";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            this.gridColumn3.Width = 0xa7;
-            this.gridColumn4.Caption = "可设指令";
-            this.gridColumn4.FieldName = "Pattern";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 0xa7;
-            this.gridColumn5.Caption = "备注说明";
-            this.gridColumn5.FieldName = "PointMemo";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 0x99;
-            this.gridColumn1.Caption = "默认状态";
-            this.gridColumn1.FieldName = "NormalIsBreak";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 0x56;
-            base.AutoScaleDimensions = new SizeF(7f, 14f);
-            base.AutoScaleMode = AutoScaleMode.Font;
-            base.ClientSize = new Size(0x2a7, 0x1b2);
-            base.Controls.Add(this.gridControl1);
-            base.Controls.Add(this.barDockControlLeft);
-            base.Controls.Add(this.barDockControlRight);
-            base.Controls.Add(this.barDockControlBottom);
-            base.Controls.Add(this.barDockControlTop);
-            base.Name = "FrmFault";
-            this.Text = "故障点";
-            base.Load += new EventHandler(this.FrmFault_Load);
-            this.barManager1.EndInit();
-            this.gridControl1.EndInit();
-            this.gridView1.EndInit();
-            base.ResumeLayout(false);
         }
     }
 }
