@@ -1,1065 +1,455 @@
-USE [JXCar]
-GO
-/****** Object:  Table [dbo].[UserInfo]    Script Date: 05/08/2019 23:37:52 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[UserInfo](
-	[StudyNO] [nvarchar](50) NOT NULL,
-	[StudyName] [nvarchar](50) NOT NULL,
-	[IsMan] [bit] NULL,
-	[UserName] [nvarchar](50) NOT NULL,
-	[PassWord] [nvarchar](100) NOT NULL,
-	[RoleId] [int] NOT NULL,
-	[RoleName] [nvarchar](50) NOT NULL,
-	[Mail] [nvarchar](100) NOT NULL,
-	[Userable] [bit] NOT NULL,
- CONSTRAINT [PK_UserInfo] PRIMARY KEY CLUSTERED 
-(
-	[StudyNO] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'02145', N'张三', 1, N'zhang', N'123456', 1, N'教师', N'81182@aa.com', 0)
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'111', N'11', 0, N'111', N'111', 2, N'学生', N'54644@qq.com', 1)
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'200901800', N'程坤波', 1, N'ckb', N'123456', 0, N'管理员', N'811823922@qq.com', 1)
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'20141220', N'ckb', 0, N'cjj', N'123456', 2, N'学生', N'811823922@qq.com', 1)
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'2656', N'李四', 1, N'国泰安123', N'123456', 2, N'学生', N'81182@aa.com', 1)
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'aa', N'a', 0, N'gta', N'123456', 2, N'学生', N'811823922@qq.com', 1)
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'aaaa', N'aa', 1, N'aaa', N'aaa', 1, N'教师', N'13464@qq.com', 0)
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'bnhhh', N'hhh', 0, N'hhh', N'hhh', 0, N'管理员', N'dgd@qq.com', 0)
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'da', N'dafd', 0, N'dad', N'sd', 2, N'学生', N'1021638640@qq.com', 1)
-INSERT [dbo].[UserInfo] ([StudyNO], [StudyName], [IsMan], [UserName], [PassWord], [RoleId], [RoleName], [Mail], [Userable]) VALUES (N'dfas', N'adas', 0, N'sada', N'dsada', 2, N'学生', N'fdgh461@qq.com', 1)
-/****** Object:  Table [dbo].[SysModule]    Script Date: 05/08/2019 23:37:52 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[SysModule](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[ModuleName] [nvarchar](50) NOT NULL,
-	[CarClass] [nvarchar](50) NOT NULL,
-	[schematic] [nvarchar](50) NULL,
- CONSTRAINT [PK_SysModule] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[SysModule] ON
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (1, N'发动机点火系统', N'2013款桑塔纳1.6L 自动 舒适版', N'发动机点火系统.swf')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (2, N'发动机燃油喷射系统', N'2013款桑塔纳1.6L 自动 舒适版', N'发动机燃油喷射系统.swf')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (3, N'节气门控制单元与油门踏板', N'2013款桑塔纳1.6L 自动 舒适版', N'节气门控制单元与油门踏板.swf')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (4, N'进气压力进气温度和水温度传感器', N'2013款桑塔纳1.6L 自动 舒适版', N'进气压力进气温度和水温度传感器.swf')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (5, N'前后氧传感器', N'2013款桑塔纳1.6L 自动 舒适版', N'前后氧传感器.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (6, N'霍尔爆震传感器和碳罐电磁阀', N'2013款桑塔纳1.6L 自动 舒适版', N'霍尔爆震传感器和碳罐电磁阀.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (7, N'变速器系统', N'2013款桑塔纳1.6L 自动 舒适版', N'变速器系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (8, N'空调控制系统', N'2013款桑塔纳1.6L 自动 舒适版', N'空调控制系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (9, N'空调鼓风机控制系统', N'2013款桑塔纳1.6L 自动 舒适版', N'空调鼓风机控制系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (10, N'ABS系统', N'2013款桑塔纳1.6L 自动 舒适版', N'ABS系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (11, N'组合仪表系统', N'2013款桑塔纳1.6L 自动 舒适版', N'组合仪表系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (12, N'音响系统', N'2013款桑塔纳1.6L 自动 舒适版', N'音响系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (13, N'危险及转向信号灯', N'2013款桑塔纳1.6L 自动 舒适版', N'危险及转向信号灯.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (14, N'倒车刹车灯控制系统', N'2013款桑塔纳1.6L 自动 舒适版', N'倒车刹车灯控制系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (15, N'车外灯光控制系统', N'2013款桑塔纳1.6L 自动 舒适版', N'车外灯光控制系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (16, N'驾驶员侧车门控制系统', N'2013款桑塔纳1.6L 自动 舒适版', N'驾驶员侧车门控制系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (17, N'副驾驶员侧车门控制系统', N'2013款桑塔纳1.6L 自动 舒适版', N'副驾驶员侧车门控制系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (18, N'左后车门控制系统', N'2013款桑塔纳1.6L 自动 舒适版', N'左后车门控制系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (19, N'右后车门控制系统', N'2013款桑塔纳1.6L 自动 舒适版', N'右后车门控制系统.png')
-INSERT [dbo].[SysModule] ([Id], [ModuleName], [CarClass], [schematic]) VALUES (20, N'雨刮系统', N'2013款桑塔纳1.6L 自动 舒适版', N'雨刮系统.png')
-SET IDENTITY_INSERT [dbo].[SysModule] OFF
-/****** Object:  Table [dbo].[ServerInfo]    Script Date: 05/08/2019 23:37:52 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[ServerInfo](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[IP] [nvarchar](50) NOT NULL,
-	[Port1] [int] NOT NULL,
-	[Port2] [int] NULL,
-	[ShareAddress] [nvarchar](50) NULL,
-	[Memo] [text] NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[ServerInfo] ON
-INSERT [dbo].[ServerInfo] ([Id], [IP], [Port1], [Port2], [ShareAddress], [Memo]) VALUES (1, N'192.168.0.101', 8080, 8081, N'www.hao123.com', N'通信配置信息')
-SET IDENTITY_INSERT [dbo].[ServerInfo] OFF
-/****** Object:  Table [dbo].[OperateLog]    Script Date: 05/08/2019 23:37:52 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[OperateLog](
-	[RecordId] [int] IDENTITY(1,1) NOT NULL,
-	[OperaterName] [nvarchar](50) NOT NULL,
-	[Message] [text] NULL,
-	[Time] [datetime] NOT NULL,
- CONSTRAINT [PK_OperateLog] PRIMARY KEY CLUSTERED 
-(
-	[RecordId] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[OperateLog] ON
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (1, N'ckb', N'切换模块[发动机燃油喷射系统]失败', CAST(0x0000A46C01055658 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (2, N'ckb', N'切换模块[发动机燃油喷射系统]失败', CAST(0x0000A46C0105714C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (3, N'ckb', N'切换模块[发动机燃油喷射系统]成功', CAST(0x0000A46C010581B4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (4, N'ckb', N'切换模块[发动机点火系统]失败', CAST(0x0000A46C01059A50 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (5, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', CAST(0x0000A46C0106B264 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (6, N'ckb', N'成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', CAST(0x0000A46C0106B264 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (7, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', CAST(0x0000A46C0106B264 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (8, N'ckb', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', CAST(0x0000A46C0106B264 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (9, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', CAST(0x0000A46C0106C524 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (10, N'ckb', N'成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', CAST(0x0000A46C0106C524 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (11, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', CAST(0x0000A46C0106C524 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (12, N'ckb', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', CAST(0x0000A46C0106C524 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (13, N'ckb', N'成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', CAST(0x0000A46C0106D7E4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (14, N'ckb', N'成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', CAST(0x0000A46C0106D7E4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (15, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', CAST(0x0000A46C0106D7E4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (16, N'ckb', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', CAST(0x0000A46C0106D7E4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (17, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', CAST(0x0000A46C0106E270 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (18, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', CAST(0x0000A46C0106E270 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (19, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', CAST(0x0000A46C0106E270 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (20, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', CAST(0x0000A46C0106E270 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (21, N'ckb', N'成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', CAST(0x0000A46C01071D08 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (22, N'ckb', N'成功设置故障[虚接]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', CAST(0x0000A46C01071D08 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (23, N'ckb', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', CAST(0x0000A46C01071D08 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (24, N'ckb', N'成功设置故障[短路]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', CAST(0x0000A46C01071D08 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (25, N'ckb', N'切换模块[发动机燃油喷射系统]成功', CAST(0x0000A46C010A8998 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (26, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', CAST(0x0000A46C010ADF24 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (27, N'ckb', N'成功设置故障[虚接]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', CAST(0x0000A46C010ADF24 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (28, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', CAST(0x0000A46C010ADF24 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (29, N'ckb', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', CAST(0x0000A46C010ADF24 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (30, N'ckb', N'切换模块[发动机燃油喷射系统]成功', CAST(0x0000A46C010BA8B4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (31, N'ckb', N'成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', CAST(0x0000A46C010BE928 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (32, N'ckb', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', CAST(0x0000A46C010BEA54 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (33, N'ckb', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', CAST(0x0000A46C010BEA54 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (34, N'ckb', N'成功设置故障[短路]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', CAST(0x0000A46C010BEA54 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (35, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010C8C0C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (36, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010C8F90 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (37, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010C8F90 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (38, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010C8F90 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (39, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010C9C74 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (40, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010CA250 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (41, N'平板用户', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010CBAEC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (42, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010CC320 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (43, N'平板用户', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[2]', CAST(0x0000A46C010CDE14 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (44, N'平板用户', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[2]', CAST(0x0000A46C010CDE14 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (45, N'平板用户', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3]', CAST(0x0000A46C010D05EC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (46, N'平板用户', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[3]', CAST(0x0000A46C010D4E94 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (47, N'平板用户', N'成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3]', CAST(0x0000A46C010D6154 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (48, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[3]', CAST(0x0000A46C010D6D0C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (49, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[2]', CAST(0x0000A46C010D85A8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (50, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010DA8D0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (51, N'平板用户', N'成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010DCACC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (52, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010DD684 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (53, N'平板用户', N'成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010DD7B0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (54, N'平板用户', N'成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010E07BC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (55, N'平板用户', N'成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010E08E8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (56, N'平板用户', N'成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1]', CAST(0x0000A46C010E3444 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (57, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C01222D28 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (58, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012230AC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (59, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C01223304 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (60, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C0122355C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (61, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012237B4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (62, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C01223B38 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (63, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C0123615C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (64, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C01236738 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (65, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C01236D14 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (66, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012371C4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (67, N'平板用户', N'设置故障[短路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012377A0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (68, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C01237D7C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (69, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C01238F10 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (70, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012393C0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (71, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C0123AA04 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (72, N'平板用户', N'设置故障[短路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C0123AC5C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (73, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C0123AFE0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (74, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C01292BC8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (75, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C01293078 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (76, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012933FC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (77, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012970EC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (78, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C01297470 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (79, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012976C8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (80, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C01297CA4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (81, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012984D8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (82, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C01298730 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (83, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C0129B994 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (84, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C0129BD18 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (85, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C0129BF70 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (86, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C0129C1C8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (87, N'平板用户', N'设置故障[短路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C0129C54C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (88, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C0129C7A4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (89, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C0129C9FC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (90, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C0129CD80 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (91, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C0129CFD8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (92, N'平板用户', N'设置故障[短路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C0129D230 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (93, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C0129DA64 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (94, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C0129DF14 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (95, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C0129E298 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (96, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012B8AD0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (97, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012B8E54 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (98, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012B91D8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (99, N'平板用户', N'设置故障[短路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012BAA74 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (100, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[4]', CAST(0x0000A46C012BACCC AS DateTime))
-GO
-print 'Processed 100 total records'
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (101, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[4]', CAST(0x0000A46C012BAF24 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (102, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[4]', CAST(0x0000A46C012BB2A8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (103, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[4]', CAST(0x0000A46C012BB500 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (104, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012BB758 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (105, N'平板用户', N'设置故障[短路]失败:模块为[未连接],故障点为[4]', CAST(0x0000A46C012BBADC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (106, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012BDE04 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (107, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012BE3E0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (108, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012BE764 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (109, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012BE9BC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (110, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012BF1F0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (111, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012BF448 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (112, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012BF6A0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (113, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012BF8F8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (114, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012BFC7C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (115, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012C0000 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (116, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012C0384 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (117, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012C05DC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (118, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012C639C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (119, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012C6720 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (120, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012C6978 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (121, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012C6BD0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (122, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012C9D08 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (123, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012CA8C0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (124, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012CAB18 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (125, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012CAD70 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (126, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[2]', CAST(0x0000A46C012CB0F4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (127, N'平板用户', N'设置故障[]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012CB478 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (128, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012CC864 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (129, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012CCBE8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (130, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012CCE40 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (131, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012CD1C4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (132, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012D6DA0 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (133, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012D7124 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (134, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012D737C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (135, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012D782C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (136, N'平板用户', N'设置故障[虚接]失败:模块为[未连接],故障点为[3]', CAST(0x0000A46C012D7A84 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (137, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012DE9D8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (138, N'平板用户', N'设置故障[]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012DED5C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (139, N'平板用户', N'设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012DF338 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (140, N'平板用户', N'设置故障[断路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012DF7E8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (141, N'平板用户', N'设置故障[通路]失败:模块为[未连接],故障点为[1]', CAST(0x0000A46C012E0148 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (142, N'ckb', N'成功设置故障[断路]:模块为[未连接],故障点为[3缸喷油嘴控制线路]', CAST(0x0000A56D00EDF210 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (143, N'ckb', N'成功设置故障[断路]:模块为[未连接],故障点为[燃油泵继电器控制线路]', CAST(0x0000A56D00EE0D04 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (144, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[3缸喷油嘴控制线路]', CAST(0x0000A56D00EE1538 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (145, N'ckb', N'成功设置故障[断路]:模块为[未连接],故障点为[1缸喷油嘴控制线路]', CAST(0x0000A56D00EE2DD4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (146, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[1缸喷油嘴控制线路]', CAST(0x0000A56D00EE3734 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (147, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[发动机CAN-L线路]', CAST(0x0000A56D00F1F248 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (148, N'ckb', N'成功设置故障[断路]:模块为[未连接],故障点为[发动机转速信号线路]', CAST(0x0000A56D00F20058 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (149, N'ckb', N'成功设置故障[虚接]:模块为[未连接],故障点为[发动机转速信号线路]', CAST(0x0000A56D00F20F94 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (150, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[发动机转速信号线路]', CAST(0x0000A56D00F218F4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (151, N'ckb', N'设置故障失败[不稳定状态]:模块为[未连接],故障点为[发动机CAN-L线路]', CAST(0x0000A56D0104BBA8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (152, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[发动机CAN-L线路]', CAST(0x0000A56D01056C9C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (153, N'ckb', N'成功设置故障[断路]:模块为[未连接],故障点为[发动机CAN-L线路]', CAST(0x0000A56D010575FC AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (154, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[倒车灯线路]', CAST(0x0000A56F017846F4 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (155, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[制动灯线路]', CAST(0x0000A56F0178494C AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (156, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[刹车制动信号线路]', CAST(0x0000A56F01784A78 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (157, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[倒车灯线路]', CAST(0x0000A56F017A15D8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (158, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[制动灯线路]', CAST(0x0000A56F017A15D8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (159, N'ckb', N'成功设置故障[通路]:模块为[未连接],故障点为[刹车制动信号线路]', CAST(0x0000A56F017A15D8 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (160, N'ckb', N'成功设置故障[断路]:模块为[未连接],故障点为[车外灯开关大灯线路]', CAST(0x0000A56F017AD284 AS DateTime))
-INSERT [dbo].[OperateLog] ([RecordId], [OperaterName], [Message], [Time]) VALUES (161, N'ckb', N'成功设置故障[断路]:模块为[未连接],故障点为[左侧后雾灯线路]', CAST(0x0000A56F017AD284 AS DateTime))
-SET IDENTITY_INSERT [dbo].[OperateLog] OFF
-/****** Object:  Table [dbo].[ItemPool]    Script Date: 05/08/2019 23:37:52 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[ItemPool](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[ModuleId] [int] NOT NULL,
-	[FaultPointId] [int] NOT NULL,
-	[TypeNO] [int] NOT NULL,
-	[TypeName] [nvarchar](50) NOT NULL,
-	[Question] [text] NOT NULL,
-	[OptionA] [text] NULL,
-	[OptionB] [text] NULL,
-	[OptionC] [text] NULL,
-	[OptionD] [text] NULL,
-	[Answer] [nvarchar](50) NOT NULL,
-	[ScorePoint] [numeric](2, 1) NOT NULL,
-	[CheckerNO] [nvarchar](50) NOT NULL,
-	[CheckerName] [nvarchar](50) NOT NULL,
-	[MemoReminder] [text] NULL,
-	[Time] [datetime] NOT NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[ItemPool] ON
-INSERT [dbo].[ItemPool] ([Id], [ModuleId], [FaultPointId], [TypeNO], [TypeName], [Question], [OptionA], [OptionB], [OptionC], [OptionD], [Answer], [ScorePoint], [CheckerNO], [CheckerName], [MemoReminder], [Time]) VALUES (1, 1, 1, 1, N'单项选择题                                             ', N'你哪一年出生（）', N'1989', N'1999', N'1987', N'1988', N'A                   ', CAST(1.0 AS Numeric(2, 1)), N'20141224            ', N'国泰安                                               ', N'若不知道可以回家问你父母', CAST(0x0000A40B00000000 AS DateTime))
-INSERT [dbo].[ItemPool] ([Id], [ModuleId], [FaultPointId], [TypeNO], [TypeName], [Question], [OptionA], [OptionB], [OptionC], [OptionD], [Answer], [ScorePoint], [CheckerNO], [CheckerName], [MemoReminder], [Time]) VALUES (2, 1, 2, 1, N'单项选择题', N'aa', NULL, NULL, NULL, NULL, N'aa', CAST(2.0 AS Numeric(2, 1)), N'200901800', N'程坤波', N'a', CAST(0x0000A41A0118AA00 AS DateTime))
-INSERT [dbo].[ItemPool] ([Id], [ModuleId], [FaultPointId], [TypeNO], [TypeName], [Question], [OptionA], [OptionB], [OptionC], [OptionD], [Answer], [ScorePoint], [CheckerNO], [CheckerName], [MemoReminder], [Time]) VALUES (4, 1, 2, 3, N'判断题', N'aa', NULL, NULL, NULL, NULL, N'aa', CAST(2.0 AS Numeric(2, 1)), N'200901800', N'程坤波', NULL, CAST(0x0000A41A011A93D8 AS DateTime))
-SET IDENTITY_INSERT [dbo].[ItemPool] OFF
-/****** Object:  Table [dbo].[HisData]    Script Date: 05/08/2019 23:37:52 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[HisData](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[ModuleId] [int] NOT NULL,
-	[DataTypeId] [int] NOT NULL,
-	[DataTypeName] [nvarchar](50) NOT NULL,
-	[Value] [nvarchar](50) NOT NULL,
-	[Time] [datetime] NOT NULL
-) ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[HisData] ON
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (1, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BC622C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (2, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BC622C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (3, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BC65B0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (4, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BC65B0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (5, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BC6808 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (6, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BC6808 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (7, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BC6A60 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (8, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BC6A60 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (9, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BC6DE4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (10, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BC6DE4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (11, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BCAE58 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (12, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BCAE58 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (13, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BCDAE0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (14, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BCDAE0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (15, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BCDD38 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (16, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BCDD38 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (17, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BCDF90 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (18, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BCDF90 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (19, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BCE314 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (20, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BCE314 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (21, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BCE56C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (22, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BCE56C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (23, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BCE7C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (24, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BCE7C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (25, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BCF4A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (26, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BCF4A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (27, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD55EC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (28, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD55EC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (29, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD6E88 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (30, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD6E88 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (31, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD70E0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (32, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD70E0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (33, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD7338 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (34, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD7338 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (35, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD7914 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (36, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD7914 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (37, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD7C98 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (38, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD7C98 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (39, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD7EF0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (40, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD7EF0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (41, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD8148 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (42, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD8148 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (43, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD83A0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (44, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD83A0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (45, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD8724 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (46, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD8724 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (47, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD897C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (48, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD897C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (49, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD8D00 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (50, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD8D00 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (51, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD8F58 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (52, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD8F58 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (53, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD91B0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (54, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD91B0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (55, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD9408 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (56, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD9408 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (57, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD978C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (58, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD978C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (59, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD99E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (60, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD99E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (61, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD9C3C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (62, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD9C3C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (63, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BD9E94 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (64, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BD9E94 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (65, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDA218 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (66, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDA218 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (67, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDA470 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (68, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDA470 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (69, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDA6C8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (70, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDA6C8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (71, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDA920 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (72, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDA920 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (73, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDAB78 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (74, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDAB78 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (75, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDAEFC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (76, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDAEFC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (77, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDB154 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (78, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDB154 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (79, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDB3AC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (80, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDB3AC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (81, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDB604 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (82, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDB604 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (83, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDB988 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (84, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDB988 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (85, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDBBE0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (86, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDBBE0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (87, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDBE38 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (88, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDBE38 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (89, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDC1BC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (90, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDC1BC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (91, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDC414 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (92, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDC414 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (93, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDC66C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (94, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDC66C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (95, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDC8C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (96, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDC8C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (97, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDCC48 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (98, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDCC48 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (99, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDCEA0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (100, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDCEA0 AS DateTime))
-GO
-print 'Processed 100 total records'
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (101, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDD0F8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (102, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDD0F8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (103, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDD350 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (104, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDD350 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (105, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDD6D4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (106, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDD6D4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (107, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDD92C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (108, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDD92C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (109, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDDB84 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (110, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDDB84 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (111, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDDDDC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (112, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDDDDC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (113, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDE160 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (114, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDE160 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (115, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDE3B8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (116, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDE3B8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (117, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDE610 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (118, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDE610 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (119, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDE868 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (120, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDE868 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (121, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDEBEC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (122, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDEBEC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (123, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDEE44 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (124, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDEE44 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (125, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDF09C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (126, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDF09C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (127, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDF2F4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (128, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDF2F4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (129, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDF9FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (130, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDF9FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (131, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BDFC54 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (132, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BDFC54 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (133, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE0230 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (134, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE0230 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (135, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE0488 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (136, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE0488 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (137, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE0B90 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (138, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE0B90 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (139, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE0DE8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (140, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE0DE8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (141, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE13C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (142, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE13C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (143, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE161C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (144, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE161C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (145, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE1BF8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (146, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE1BF8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (147, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE1F7C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (148, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE1F7C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (149, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE35C0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (150, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE35C0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (151, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE3818 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (152, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE3818 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (153, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE3A70 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (154, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE3A70 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (155, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE3CC8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (156, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE3CC8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (157, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE404C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (158, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE404C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (159, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE42A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (160, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE42A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (161, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE44FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (162, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE44FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (163, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE4754 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (164, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE4754 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (165, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE4AD8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (166, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE4AD8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (167, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE4D30 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (168, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE4D30 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (169, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE4F88 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (170, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE4F88 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (171, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE51E0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (172, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE51E0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (173, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE5564 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (174, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE5564 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (175, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE57BC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (176, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE57BC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (177, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE5A14 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (178, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE5A14 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (179, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE5D98 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (180, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE5D98 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (181, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE5FF0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (182, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE5FF0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (183, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE6248 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (184, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE6248 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (185, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE64A0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (186, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE64A0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (187, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE6824 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (188, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE6824 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (189, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE6A7C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (190, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE6A7C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (191, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE6CD4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (192, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE6CD4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (193, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE6F2C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (194, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE6F2C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (195, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE72B0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (196, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE72B0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (197, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE7508 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (198, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE7508 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (199, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE7760 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (200, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE7760 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (201, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE79B8 AS DateTime))
-GO
-print 'Processed 200 total records'
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (202, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE79B8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (203, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE7D3C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (204, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE7D3C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (205, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE7F94 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (206, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE7F94 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (207, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE81EC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (208, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE81EC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (209, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE8444 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (210, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE8444 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (211, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE87C8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (212, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE87C8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (213, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE8A20 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (214, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE8A20 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (215, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE8C78 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (216, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE8C78 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (217, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE8ED0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (218, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE8ED0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (219, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE9128 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (220, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE9128 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (221, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE94AC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (222, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE94AC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (223, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE9704 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (224, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE9704 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (225, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE995C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (226, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE995C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (227, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE9BB4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (228, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE9BB4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (229, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BE9F38 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (230, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BE9F38 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (231, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEA190 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (232, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEA190 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (233, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEA3E8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (234, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEA3E8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (235, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEA640 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (236, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEA640 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (237, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEA9C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (238, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEA9C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (239, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEAC1C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (240, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEAC1C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (241, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEAE74 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (242, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEAE74 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (243, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEB0CC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (244, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEB0CC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (245, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEB450 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (246, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEB450 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (247, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEB6A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (248, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEB6A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (249, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEB900 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (250, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEB900 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (251, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEBB58 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (252, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEBB58 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (253, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEBEDC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (254, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEBEDC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (255, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEC134 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (256, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEC134 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (257, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEC38C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (258, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEC38C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (259, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEC5E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (260, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEC5E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (261, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEC968 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (262, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEC968 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (263, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BECBC0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (264, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BECBC0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (265, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BECE18 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (266, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BECE18 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (267, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BED19C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (268, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BED19C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (269, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BED3F4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (270, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BED3F4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (271, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BED64C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (272, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BED64C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (273, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BED8A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (274, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BED8A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (275, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEDAFC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (276, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEDAFC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (277, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEDE80 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (278, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEDE80 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (279, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEE0D8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (280, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEE0D8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (281, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEE330 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (282, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEE330 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (283, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEE6B4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (284, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEE6B4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (285, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEE90C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (286, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEE90C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (287, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEEB64 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (288, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEEB64 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (289, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEEDBC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (290, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEEDBC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (291, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEF140 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (292, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEF140 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (293, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEF398 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (294, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEF398 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (295, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEF5F0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (296, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEF5F0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (297, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEF848 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (298, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEF848 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (299, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEFBCC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (300, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEFBCC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (301, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C00BEFE24 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (302, 0, 2, N'发动机转速', N'600rpm', CAST(0x0000A46C00BEFE24 AS DateTime))
-GO
-print 'Processed 300 total records'
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (303, 0, 1, N'发动机冷却液温度', N'70℃', CAST(0x0000A46C012B54E8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (304, 0, 2, N'发动机转速', N'2401rpm', CAST(0x0000A46C012B54E8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (305, 0, 1, N'发动机冷却液温度', N'74℃', CAST(0x0000A46C012B5740 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (306, 0, 2, N'发动机转速', N'2405rpm', CAST(0x0000A46C012B5740 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (307, 0, 1, N'发动机冷却液温度', N'78℃', CAST(0x0000A46C012B5998 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (308, 0, 2, N'发动机转速', N'2409rpm', CAST(0x0000A46C012B5998 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (309, 0, 1, N'发动机冷却液温度', N'82℃', CAST(0x0000A46C012B5D1C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (310, 0, 2, N'发动机转速', N'2413rpm', CAST(0x0000A46C012B5D1C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (311, 0, 1, N'发动机冷却液温度', N'86℃', CAST(0x0000A46C012B5F74 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (312, 0, 2, N'发动机转速', N'2417rpm', CAST(0x0000A46C012B5F74 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (313, 0, 1, N'发动机冷却液温度', N'90℃', CAST(0x0000A46C012B61CC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (314, 0, 2, N'发动机转速', N'2421rpm', CAST(0x0000A46C012B61CC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (315, 0, 1, N'发动机冷却液温度', N'94℃', CAST(0x0000A46C012B6424 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (316, 0, 2, N'发动机转速', N'2425rpm', CAST(0x0000A46C012B6424 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (317, 0, 1, N'发动机冷却液温度', N'98℃', CAST(0x0000A46C012B67A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (318, 0, 2, N'发动机转速', N'2429rpm', CAST(0x0000A46C012B67A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (319, 0, 1, N'发动机冷却液温度', N'102℃', CAST(0x0000A46C012B6A00 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (320, 0, 2, N'发动机转速', N'2433rpm', CAST(0x0000A46C012B6A00 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (321, 0, 1, N'发动机冷却液温度', N'106℃', CAST(0x0000A46C012B6C58 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (322, 0, 2, N'发动机转速', N'2437rpm', CAST(0x0000A46C012B6C58 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (323, 0, 1, N'发动机冷却液温度', N'110℃', CAST(0x0000A46C012B6EB0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (324, 0, 2, N'发动机转速', N'2441rpm', CAST(0x0000A46C012B6EB0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (325, 0, 1, N'发动机冷却液温度', N'114℃', CAST(0x0000A46C012B7234 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (326, 0, 2, N'发动机转速', N'2445rpm', CAST(0x0000A46C012B7234 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (327, 0, 1, N'发动机冷却液温度', N'118℃', CAST(0x0000A46C012B748C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (328, 0, 2, N'发动机转速', N'2449rpm', CAST(0x0000A46C012B748C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (329, 0, 1, N'发动机冷却液温度', N'122℃', CAST(0x0000A46C012B76E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (330, 0, 2, N'发动机转速', N'2453rpm', CAST(0x0000A46C012B76E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (331, 0, 1, N'发动机冷却液温度', N'126℃', CAST(0x0000A46C012B793C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (332, 0, 2, N'发动机转速', N'2457rpm', CAST(0x0000A46C012B793C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (333, 0, 1, N'发动机冷却液温度', N'130℃', CAST(0x0000A46C012B7B94 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (334, 0, 2, N'发动机转速', N'2461rpm', CAST(0x0000A46C012B7B94 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (335, 0, 1, N'发动机冷却液温度', N'134℃', CAST(0x0000A46C012B7F18 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (336, 0, 2, N'发动机转速', N'2465rpm', CAST(0x0000A46C012B7F18 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (337, 0, 1, N'发动机冷却液温度', N'138℃', CAST(0x0000A46C012B8170 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (338, 0, 2, N'发动机转速', N'2469rpm', CAST(0x0000A46C012B8170 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (339, 0, 1, N'发动机冷却液温度', N'142℃', CAST(0x0000A46C012B83C8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (340, 0, 2, N'发动机转速', N'2473rpm', CAST(0x0000A46C012B83C8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (341, 0, 1, N'发动机冷却液温度', N'146℃', CAST(0x0000A46C012B874C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (342, 0, 2, N'发动机转速', N'2477rpm', CAST(0x0000A46C012B874C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (343, 0, 1, N'发动机冷却液温度', N'150℃', CAST(0x0000A46C012B89A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (344, 0, 2, N'发动机转速', N'2481rpm', CAST(0x0000A46C012B89A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (345, 0, 1, N'发动机冷却液温度', N'154℃', CAST(0x0000A46C012B8BFC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (346, 0, 2, N'发动机转速', N'2485rpm', CAST(0x0000A46C012B8BFC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (347, 0, 1, N'发动机冷却液温度', N'158℃', CAST(0x0000A46C012B8E54 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (348, 0, 2, N'发动机转速', N'2489rpm', CAST(0x0000A46C012B8E54 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (349, 0, 1, N'发动机冷却液温度', N'162℃', CAST(0x0000A46C012B91D8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (350, 0, 2, N'发动机转速', N'2493rpm', CAST(0x0000A46C012B91D8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (351, 0, 1, N'发动机冷却液温度', N'166℃', CAST(0x0000A46C012B97B4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (352, 0, 2, N'发动机转速', N'2497rpm', CAST(0x0000A46C012B97B4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (353, 0, 1, N'发动机冷却液温度', N'170℃', CAST(0x0000A46C012BAA74 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (354, 0, 2, N'发动机转速', N'2501rpm', CAST(0x0000A46C012BAA74 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (355, 0, 1, N'发动机冷却液温度', N'174℃', CAST(0x0000A46C012BACCC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (356, 0, 2, N'发动机转速', N'2505rpm', CAST(0x0000A46C012BACCC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (357, 0, 1, N'发动机冷却液温度', N'178℃', CAST(0x0000A46C012BB050 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (358, 0, 2, N'发动机转速', N'2509rpm', CAST(0x0000A46C012BB050 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (359, 0, 1, N'发动机冷却液温度', N'182℃', CAST(0x0000A46C012BB2A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (360, 0, 2, N'发动机转速', N'2513rpm', CAST(0x0000A46C012BB2A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (361, 0, 1, N'发动机冷却液温度', N'186℃', CAST(0x0000A46C012BB500 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (362, 0, 2, N'发动机转速', N'2517rpm', CAST(0x0000A46C012BB500 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (363, 0, 1, N'发动机冷却液温度', N'190℃', CAST(0x0000A46C012BB758 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (364, 0, 2, N'发动机转速', N'2521rpm', CAST(0x0000A46C012BB758 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (365, 0, 1, N'发动机冷却液温度', N'194℃', CAST(0x0000A46C012BBADC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (366, 0, 2, N'发动机转速', N'2525rpm', CAST(0x0000A46C012BBADC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (367, 0, 1, N'发动机冷却液温度', N'198℃', CAST(0x0000A46C012BBD34 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (368, 0, 2, N'发动机转速', N'2529rpm', CAST(0x0000A46C012BBD34 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (369, 0, 1, N'发动机冷却液温度', N'202℃', CAST(0x0000A46C012BBF8C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (370, 0, 2, N'发动机转速', N'2533rpm', CAST(0x0000A46C012BBF8C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (371, 0, 1, N'发动机冷却液温度', N'206℃', CAST(0x0000A46C012BC1E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (372, 0, 2, N'发动机转速', N'2537rpm', CAST(0x0000A46C012BC1E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (373, 0, 1, N'发动机冷却液温度', N'210℃', CAST(0x0000A46C012BC568 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (374, 0, 2, N'发动机转速', N'2541rpm', CAST(0x0000A46C012BC568 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (375, 0, 1, N'发动机冷却液温度', N'214℃', CAST(0x0000A46C012BC7C0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (376, 0, 2, N'发动机转速', N'2545rpm', CAST(0x0000A46C012BC7C0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (377, 0, 1, N'发动机冷却液温度', N'218℃', CAST(0x0000A46C012BCA18 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (378, 0, 2, N'发动机转速', N'2549rpm', CAST(0x0000A46C012BCA18 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (379, 0, 1, N'发动机冷却液温度', N'222℃', CAST(0x0000A46C012BCD9C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (380, 0, 2, N'发动机转速', N'2553rpm', CAST(0x0000A46C012BCD9C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (381, 0, 1, N'发动机冷却液温度', N'226℃', CAST(0x0000A46C012BCFF4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (382, 0, 2, N'发动机转速', N'2557rpm', CAST(0x0000A46C012BCFF4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (383, 0, 1, N'发动机冷却液温度', N'230℃', CAST(0x0000A46C012BD4A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (384, 0, 2, N'发动机转速', N'2561rpm', CAST(0x0000A46C012BD4A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (385, 0, 1, N'发动机冷却液温度', N'234℃', CAST(0x0000A46C012BD6FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (386, 0, 2, N'发动机转速', N'2565rpm', CAST(0x0000A46C012BD6FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (387, 0, 1, N'发动机冷却液温度', N'238℃', CAST(0x0000A46C012BDA80 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (388, 0, 2, N'发动机转速', N'2569rpm', CAST(0x0000A46C012BDA80 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (389, 0, 1, N'发动机冷却液温度', N'242℃', CAST(0x0000A46C012BDCD8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (390, 0, 2, N'发动机转速', N'2573rpm', CAST(0x0000A46C012BDCD8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (391, 0, 1, N'发动机冷却液温度', N'246℃', CAST(0x0000A46C012BDF30 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (392, 0, 2, N'发动机转速', N'2577rpm', CAST(0x0000A46C012BDF30 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (393, 0, 1, N'发动机冷却液温度', N'250℃', CAST(0x0000A46C012BE188 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (394, 0, 2, N'发动机转速', N'2581rpm', CAST(0x0000A46C012BE188 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (395, 0, 1, N'发动机冷却液温度', N'254℃', CAST(0x0000A46C012BE50C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (396, 0, 2, N'发动机转速', N'2585rpm', CAST(0x0000A46C012BE50C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (397, 0, 1, N'发动机冷却液温度', N'258℃', CAST(0x0000A46C012BE764 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (398, 0, 2, N'发动机转速', N'2589rpm', CAST(0x0000A46C012BE764 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (399, 0, 1, N'发动机冷却液温度', N'262℃', CAST(0x0000A46C012BE9BC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (400, 0, 2, N'发动机转速', N'2593rpm', CAST(0x0000A46C012BE9BC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (401, 0, 1, N'发动机冷却液温度', N'266℃', CAST(0x0000A46C012BF0C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (402, 0, 2, N'发动机转速', N'2597rpm', CAST(0x0000A46C012BF0C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (403, 0, 1, N'发动机冷却液温度', N'270℃', CAST(0x0000A46C012BF31C AS DateTime))
-GO
-print 'Processed 400 total records'
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (404, 0, 2, N'发动机转速', N'2601rpm', CAST(0x0000A46C012BF31C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (405, 0, 1, N'发动机冷却液温度', N'274℃', CAST(0x0000A46C012BF574 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (406, 0, 2, N'发动机转速', N'2605rpm', CAST(0x0000A46C012BF574 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (407, 0, 1, N'发动机冷却液温度', N'278℃', CAST(0x0000A46C012BF7CC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (408, 0, 2, N'发动机转速', N'2609rpm', CAST(0x0000A46C012BF7CC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (409, 0, 1, N'发动机冷却液温度', N'282℃', CAST(0x0000A46C012BFB50 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (410, 0, 2, N'发动机转速', N'2613rpm', CAST(0x0000A46C012BFB50 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (411, 0, 1, N'发动机冷却液温度', N'286℃', CAST(0x0000A46C012BFDA8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (412, 0, 2, N'发动机转速', N'2617rpm', CAST(0x0000A46C012BFDA8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (413, 0, 1, N'发动机冷却液温度', N'290℃', CAST(0x0000A46C012C0000 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (414, 0, 2, N'发动机转速', N'2621rpm', CAST(0x0000A46C012C0000 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (415, 0, 1, N'发动机冷却液温度', N'294℃', CAST(0x0000A46C012C0258 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (416, 0, 2, N'发动机转速', N'2625rpm', CAST(0x0000A46C012C0258 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (417, 0, 1, N'发动机冷却液温度', N'298℃', CAST(0x0000A46C012C05DC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (418, 0, 2, N'发动机转速', N'2629rpm', CAST(0x0000A46C012C05DC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (419, 0, 1, N'发动机冷却液温度', N'302℃', CAST(0x0000A46C012C0834 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (420, 0, 2, N'发动机转速', N'2633rpm', CAST(0x0000A46C012C0834 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (421, 0, 1, N'发动机冷却液温度', N'306℃', CAST(0x0000A46C012C0A8C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (422, 0, 2, N'发动机转速', N'2637rpm', CAST(0x0000A46C012C0A8C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (423, 0, 1, N'发动机冷却液温度', N'310℃', CAST(0x0000A46C012C0CE4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (424, 0, 2, N'发动机转速', N'2641rpm', CAST(0x0000A46C012C0CE4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (425, 0, 1, N'发动机冷却液温度', N'314℃', CAST(0x0000A46C012C1068 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (426, 0, 2, N'发动机转速', N'2645rpm', CAST(0x0000A46C012C1068 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (427, 0, 1, N'发动机冷却液温度', N'318℃', CAST(0x0000A46C012C12C0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (428, 0, 2, N'发动机转速', N'2649rpm', CAST(0x0000A46C012C12C0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (429, 0, 1, N'发动机冷却液温度', N'322℃', CAST(0x0000A46C012C1518 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (430, 0, 2, N'发动机转速', N'2653rpm', CAST(0x0000A46C012C1518 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (431, 0, 1, N'发动机冷却液温度', N'326℃', CAST(0x0000A46C012C1770 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (432, 0, 2, N'发动机转速', N'2657rpm', CAST(0x0000A46C012C1770 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (433, 0, 1, N'发动机冷却液温度', N'330℃', CAST(0x0000A46C012C1AF4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (434, 0, 2, N'发动机转速', N'2661rpm', CAST(0x0000A46C012C1AF4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (435, 0, 1, N'发动机冷却液温度', N'334℃', CAST(0x0000A46C012C1D4C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (436, 0, 2, N'发动机转速', N'2665rpm', CAST(0x0000A46C012C1D4C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (437, 0, 1, N'发动机冷却液温度', N'338℃', CAST(0x0000A46C012C1FA4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (438, 0, 2, N'发动机转速', N'2669rpm', CAST(0x0000A46C012C1FA4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (439, 0, 1, N'发动机冷却液温度', N'342℃', CAST(0x0000A46C012C21FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (440, 0, 2, N'发动机转速', N'2673rpm', CAST(0x0000A46C012C21FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (441, 0, 1, N'发动机冷却液温度', N'346℃', CAST(0x0000A46C012C2580 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (442, 0, 2, N'发动机转速', N'2677rpm', CAST(0x0000A46C012C2580 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (443, 0, 1, N'发动机冷却液温度', N'350℃', CAST(0x0000A46C012C27D8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (444, 0, 2, N'发动机转速', N'2681rpm', CAST(0x0000A46C012C27D8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (445, 0, 1, N'发动机冷却液温度', N'354℃', CAST(0x0000A46C012C2A30 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (446, 0, 2, N'发动机转速', N'2685rpm', CAST(0x0000A46C012C2A30 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (447, 0, 1, N'发动机冷却液温度', N'358℃', CAST(0x0000A46C012C2C88 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (448, 0, 2, N'发动机转速', N'2689rpm', CAST(0x0000A46C012C2C88 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (449, 0, 1, N'发动机冷却液温度', N'362℃', CAST(0x0000A46C012C300C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (450, 0, 2, N'发动机转速', N'2693rpm', CAST(0x0000A46C012C300C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (451, 0, 1, N'发动机冷却液温度', N'366℃', CAST(0x0000A46C012C3264 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (452, 0, 2, N'发动机转速', N'2697rpm', CAST(0x0000A46C012C3264 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (453, 0, 1, N'发动机冷却液温度', N'370℃', CAST(0x0000A46C012C34BC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (454, 0, 2, N'发动机转速', N'2701rpm', CAST(0x0000A46C012C34BC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (455, 0, 1, N'发动机冷却液温度', N'374℃', CAST(0x0000A46C012C3714 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (456, 0, 2, N'发动机转速', N'2705rpm', CAST(0x0000A46C012C3714 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (457, 0, 1, N'发动机冷却液温度', N'378℃', CAST(0x0000A46C012C3A98 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (458, 0, 2, N'发动机转速', N'2709rpm', CAST(0x0000A46C012C3A98 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (459, 0, 1, N'发动机冷却液温度', N'382℃', CAST(0x0000A46C012C3CF0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (460, 0, 2, N'发动机转速', N'2713rpm', CAST(0x0000A46C012C3CF0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (461, 0, 1, N'发动机冷却液温度', N'386℃', CAST(0x0000A46C012C3F48 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (462, 0, 2, N'发动机转速', N'2717rpm', CAST(0x0000A46C012C3F48 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (463, 0, 1, N'发动机冷却液温度', N'390℃', CAST(0x0000A46C012C41A0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (464, 0, 2, N'发动机转速', N'2721rpm', CAST(0x0000A46C012C41A0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (465, 0, 1, N'发动机冷却液温度', N'394℃', CAST(0x0000A46C012C4524 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (466, 0, 2, N'发动机转速', N'2725rpm', CAST(0x0000A46C012C4524 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (467, 0, 1, N'发动机冷却液温度', N'398℃', CAST(0x0000A46C012C477C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (468, 0, 2, N'发动机转速', N'2729rpm', CAST(0x0000A46C012C477C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (469, 0, 1, N'发动机冷却液温度', N'402℃', CAST(0x0000A46C012C49D4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (470, 0, 2, N'发动机转速', N'2733rpm', CAST(0x0000A46C012C49D4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (471, 0, 1, N'发动机冷却液温度', N'406℃', CAST(0x0000A46C012C4C2C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (472, 0, 2, N'发动机转速', N'2737rpm', CAST(0x0000A46C012C4C2C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (473, 0, 1, N'发动机冷却液温度', N'410℃', CAST(0x0000A46C012C4FB0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (474, 0, 2, N'发动机转速', N'2741rpm', CAST(0x0000A46C012C4FB0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (475, 0, 1, N'发动机冷却液温度', N'414℃', CAST(0x0000A46C012C5208 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (476, 0, 2, N'发动机转速', N'2745rpm', CAST(0x0000A46C012C5208 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (477, 0, 1, N'发动机冷却液温度', N'418℃', CAST(0x0000A46C012C5460 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (478, 0, 2, N'发动机转速', N'2749rpm', CAST(0x0000A46C012C5460 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (479, 0, 1, N'发动机冷却液温度', N'422℃', CAST(0x0000A46C012C56B8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (480, 0, 2, N'发动机转速', N'2753rpm', CAST(0x0000A46C012C56B8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (481, 0, 1, N'发动机冷却液温度', N'426℃', CAST(0x0000A46C012C5A3C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (482, 0, 2, N'发动机转速', N'2757rpm', CAST(0x0000A46C012C5A3C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (483, 0, 1, N'发动机冷却液温度', N'430℃', CAST(0x0000A46C012C5C94 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (484, 0, 2, N'发动机转速', N'2761rpm', CAST(0x0000A46C012C5C94 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (485, 0, 1, N'发动机冷却液温度', N'434℃', CAST(0x0000A46C012C5EEC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (486, 0, 2, N'发动机转速', N'2765rpm', CAST(0x0000A46C012C5EEC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (487, 0, 1, N'发动机冷却液温度', N'438℃', CAST(0x0000A46C012C6144 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (488, 0, 2, N'发动机转速', N'2769rpm', CAST(0x0000A46C012C6144 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (489, 0, 1, N'发动机冷却液温度', N'442℃', CAST(0x0000A46C012C639C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (490, 0, 2, N'发动机转速', N'2773rpm', CAST(0x0000A46C012C639C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (491, 0, 1, N'发动机冷却液温度', N'446℃', CAST(0x0000A46C012C6720 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (492, 0, 2, N'发动机转速', N'2777rpm', CAST(0x0000A46C012C6720 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (493, 0, 1, N'发动机冷却液温度', N'450℃', CAST(0x0000A46C012C6978 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (494, 0, 2, N'发动机转速', N'2781rpm', CAST(0x0000A46C012C6978 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (495, 0, 1, N'发动机冷却液温度', N'454℃', CAST(0x0000A46C012C6BD0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (496, 0, 2, N'发动机转速', N'2785rpm', CAST(0x0000A46C012C6BD0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (497, 0, 1, N'发动机冷却液温度', N'458℃', CAST(0x0000A46C012C6E28 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (498, 0, 2, N'发动机转速', N'2789rpm', CAST(0x0000A46C012C6E28 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (499, 0, 1, N'发动机冷却液温度', N'462℃', CAST(0x0000A46C012C71AC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (500, 0, 2, N'发动机转速', N'2793rpm', CAST(0x0000A46C012C71AC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (501, 0, 1, N'发动机冷却液温度', N'466℃', CAST(0x0000A46C012C7404 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (502, 0, 2, N'发动机转速', N'2797rpm', CAST(0x0000A46C012C7404 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (503, 0, 1, N'发动机冷却液温度', N'470℃', CAST(0x0000A46C012C765C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (504, 0, 2, N'发动机转速', N'2801rpm', CAST(0x0000A46C012C765C AS DateTime))
-GO
-print 'Processed 500 total records'
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (505, 0, 1, N'发动机冷却液温度', N'474℃', CAST(0x0000A46C012C78B4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (506, 0, 2, N'发动机转速', N'2805rpm', CAST(0x0000A46C012C78B4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (507, 0, 1, N'发动机冷却液温度', N'478℃', CAST(0x0000A46C012C7C38 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (508, 0, 2, N'发动机转速', N'2809rpm', CAST(0x0000A46C012C7C38 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (509, 0, 1, N'发动机冷却液温度', N'482℃', CAST(0x0000A46C012C7E90 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (510, 0, 2, N'发动机转速', N'2813rpm', CAST(0x0000A46C012C7E90 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (511, 0, 1, N'发动机冷却液温度', N'486℃', CAST(0x0000A46C012C80E8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (512, 0, 2, N'发动机转速', N'2817rpm', CAST(0x0000A46C012C80E8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (513, 0, 1, N'发动机冷却液温度', N'490℃', CAST(0x0000A46C012C8340 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (514, 0, 2, N'发动机转速', N'2821rpm', CAST(0x0000A46C012C8340 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (515, 0, 1, N'发动机冷却液温度', N'494℃', CAST(0x0000A46C012C86C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (516, 0, 2, N'发动机转速', N'2825rpm', CAST(0x0000A46C012C86C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (517, 0, 1, N'发动机冷却液温度', N'498℃', CAST(0x0000A46C012C891C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (518, 0, 2, N'发动机转速', N'2829rpm', CAST(0x0000A46C012C891C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (519, 0, 1, N'发动机冷却液温度', N'502℃', CAST(0x0000A46C012C8B74 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (520, 0, 2, N'发动机转速', N'2833rpm', CAST(0x0000A46C012C8B74 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (521, 0, 1, N'发动机冷却液温度', N'506℃', CAST(0x0000A46C012C8DCC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (522, 0, 2, N'发动机转速', N'2837rpm', CAST(0x0000A46C012C8DCC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (523, 0, 1, N'发动机冷却液温度', N'510℃', CAST(0x0000A46C012C9024 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (524, 0, 2, N'发动机转速', N'2841rpm', CAST(0x0000A46C012C9024 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (525, 0, 1, N'发动机冷却液温度', N'514℃', CAST(0x0000A46C012C93A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (526, 0, 2, N'发动机转速', N'2845rpm', CAST(0x0000A46C012C93A8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (527, 0, 1, N'发动机冷却液温度', N'518℃', CAST(0x0000A46C012C9600 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (528, 0, 2, N'发动机转速', N'2849rpm', CAST(0x0000A46C012C9600 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (529, 0, 1, N'发动机冷却液温度', N'522℃', CAST(0x0000A46C012C9858 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (530, 0, 2, N'发动机转速', N'2853rpm', CAST(0x0000A46C012C9858 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (531, 0, 1, N'发动机冷却液温度', N'526℃', CAST(0x0000A46C012C9AB0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (532, 0, 2, N'发动机转速', N'2857rpm', CAST(0x0000A46C012C9AB0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (533, 0, 1, N'发动机冷却液温度', N'530℃', CAST(0x0000A46C012C9E34 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (534, 0, 2, N'发动机转速', N'2861rpm', CAST(0x0000A46C012C9E34 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (535, 0, 1, N'发动机冷却液温度', N'534℃', CAST(0x0000A46C012CA08C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (536, 0, 2, N'发动机转速', N'2865rpm', CAST(0x0000A46C012CA08C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (537, 0, 1, N'发动机冷却液温度', N'538℃', CAST(0x0000A46C012CA2E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (538, 0, 2, N'发动机转速', N'2869rpm', CAST(0x0000A46C012CA2E4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (539, 0, 1, N'发动机冷却液温度', N'542℃', CAST(0x0000A46C012CA53C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (540, 0, 2, N'发动机转速', N'2873rpm', CAST(0x0000A46C012CA53C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (541, 0, 1, N'发动机冷却液温度', N'546℃', CAST(0x0000A46C012CA8C0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (542, 0, 2, N'发动机转速', N'2877rpm', CAST(0x0000A46C012CA8C0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (543, 0, 1, N'发动机冷却液温度', N'550℃', CAST(0x0000A46C012CAB18 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (544, 0, 2, N'发动机转速', N'2881rpm', CAST(0x0000A46C012CAB18 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (545, 0, 1, N'发动机冷却液温度', N'554℃', CAST(0x0000A46C012CAD70 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (546, 0, 2, N'发动机转速', N'2885rpm', CAST(0x0000A46C012CAD70 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (547, 0, 1, N'发动机冷却液温度', N'558℃', CAST(0x0000A46C012CAFC8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (548, 0, 2, N'发动机转速', N'2889rpm', CAST(0x0000A46C012CAFC8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (549, 0, 1, N'发动机冷却液温度', N'562℃', CAST(0x0000A46C012CB34C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (550, 0, 2, N'发动机转速', N'2893rpm', CAST(0x0000A46C012CB34C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (551, 0, 1, N'发动机冷却液温度', N'566℃', CAST(0x0000A46C012CB5A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (552, 0, 2, N'发动机转速', N'2897rpm', CAST(0x0000A46C012CB5A4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (553, 0, 1, N'发动机冷却液温度', N'570℃', CAST(0x0000A46C012CB7FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (554, 0, 2, N'发动机转速', N'2901rpm', CAST(0x0000A46C012CB7FC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (555, 0, 1, N'发动机冷却液温度', N'574℃', CAST(0x0000A46C012CBA54 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (556, 0, 2, N'发动机转速', N'2905rpm', CAST(0x0000A46C012CBA54 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (557, 0, 1, N'发动机冷却液温度', N'578℃', CAST(0x0000A46C012CBDD8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (558, 0, 2, N'发动机转速', N'2909rpm', CAST(0x0000A46C012CBDD8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (559, 0, 1, N'发动机冷却液温度', N'582℃', CAST(0x0000A46C012CC030 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (560, 0, 2, N'发动机转速', N'2913rpm', CAST(0x0000A46C012CC030 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (561, 0, 1, N'发动机冷却液温度', N'586℃', CAST(0x0000A46C012CC288 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (562, 0, 2, N'发动机转速', N'2917rpm', CAST(0x0000A46C012CC288 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (563, 0, 1, N'发动机冷却液温度', N'590℃', CAST(0x0000A46C012CC4E0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (564, 0, 2, N'发动机转速', N'2921rpm', CAST(0x0000A46C012CC4E0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (565, 0, 1, N'发动机冷却液温度', N'594℃', CAST(0x0000A46C012CC738 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (566, 0, 2, N'发动机转速', N'2925rpm', CAST(0x0000A46C012CC738 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (567, 0, 1, N'发动机冷却液温度', N'598℃', CAST(0x0000A46C012CCABC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (568, 0, 2, N'发动机转速', N'2929rpm', CAST(0x0000A46C012CCABC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (569, 0, 1, N'发动机冷却液温度', N'602℃', CAST(0x0000A46C012CCD14 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (570, 0, 2, N'发动机转速', N'2933rpm', CAST(0x0000A46C012CCD14 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (571, 0, 1, N'发动机冷却液温度', N'606℃', CAST(0x0000A46C012CCF6C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (572, 0, 2, N'发动机转速', N'2937rpm', CAST(0x0000A46C012CCF6C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (573, 0, 1, N'发动机冷却液温度', N'610℃', CAST(0x0000A46C012CD1C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (574, 0, 2, N'发动机转速', N'2941rpm', CAST(0x0000A46C012CD1C4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (575, 0, 1, N'发动机冷却液温度', N'614℃', CAST(0x0000A46C012CD548 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (576, 0, 2, N'发动机转速', N'2945rpm', CAST(0x0000A46C012CD548 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (577, 0, 1, N'发动机冷却液温度', N'618℃', CAST(0x0000A46C012CD7A0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (578, 0, 2, N'发动机转速', N'2949rpm', CAST(0x0000A46C012CD7A0 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (579, 0, 1, N'发动机冷却液温度', N'622℃', CAST(0x0000A46C012CD9F8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (580, 0, 2, N'发动机转速', N'2953rpm', CAST(0x0000A46C012CD9F8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (581, 0, 1, N'发动机冷却液温度', N'626℃', CAST(0x0000A46C012CDC50 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (582, 0, 2, N'发动机转速', N'2957rpm', CAST(0x0000A46C012CDC50 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (583, 0, 1, N'发动机冷却液温度', N'630℃', CAST(0x0000A46C012CDFD4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (584, 0, 2, N'发动机转速', N'2961rpm', CAST(0x0000A46C012CDFD4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (585, 0, 1, N'发动机冷却液温度', N'634℃', CAST(0x0000A46C012CE22C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (586, 0, 2, N'发动机转速', N'2965rpm', CAST(0x0000A46C012CE22C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (587, 0, 1, N'发动机冷却液温度', N'638℃', CAST(0x0000A46C012CE484 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (588, 0, 2, N'发动机转速', N'2969rpm', CAST(0x0000A46C012CE484 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (589, 0, 1, N'发动机冷却液温度', N'642℃', CAST(0x0000A46C012CE6DC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (590, 0, 2, N'发动机转速', N'2973rpm', CAST(0x0000A46C012CE6DC AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (591, 0, 1, N'发动机冷却液温度', N'646℃', CAST(0x0000A46C012CEA60 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (592, 0, 2, N'发动机转速', N'2977rpm', CAST(0x0000A46C012CEA60 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (593, 0, 1, N'发动机冷却液温度', N'650℃', CAST(0x0000A46C012CEDE4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (594, 0, 2, N'发动机转速', N'2981rpm', CAST(0x0000A46C012CEDE4 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (595, 0, 1, N'发动机冷却液温度', N'654℃', CAST(0x0000A46C012CF03C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (596, 0, 2, N'发动机转速', N'2985rpm', CAST(0x0000A46C012CF03C AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (597, 0, 1, N'发动机冷却液温度', N'658℃', CAST(0x0000A46C012CF294 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (598, 0, 2, N'发动机转速', N'2989rpm', CAST(0x0000A46C012CF294 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (599, 0, 1, N'发动机冷却液温度', N'662℃', CAST(0x0000A46C012CF618 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (600, 0, 2, N'发动机转速', N'2993rpm', CAST(0x0000A46C012CF618 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (601, 0, 1, N'发动机冷却液温度', N'666℃', CAST(0x0000A46C012CF870 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (602, 0, 2, N'发动机转速', N'2997rpm', CAST(0x0000A46C012CF870 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (603, 0, 1, N'发动机冷却液温度', N'670℃', CAST(0x0000A46C012CFAC8 AS DateTime))
-INSERT [dbo].[HisData] ([Id], [ModuleId], [DataTypeId], [DataTypeName], [Value], [Time]) VALUES (604, 0, 2, N'发动机转速', N'3001rpm', CAST(0x0000A46C012CFAC8 AS DateTime))
-SET IDENTITY_INSERT [dbo].[HisData] OFF
-GO
-print 'Processed 600 total records'
-/****** Object:  Table [dbo].[FaultPoint]    Script Date: 05/08/2019 23:37:52 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[FaultPoint](
-	[Id] [int] NOT NULL,
-	[Name] [nvarchar](100) NOT NULL,
-	[ModuleId] [int] NOT NULL,
-	[PatternList] [nvarchar](50) NOT NULL,
-	[NormalIsBreak] [bit] NOT NULL,
-	[PointMemo] [text] NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'发动机转速信号线路', 1, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'2缸点火控制信号线路', 1, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'4缸点火控制信号线路', 1, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'燃油泵继电器控制线路', 2, N'1,2,3,4,5', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'1缸喷油嘴控制线路', 2, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'3缸喷油嘴控制线路', 2, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'节气门角度传感器1信号线路', 3, N'1,2,3,4,5', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'节气门角度传感器信号线路', 3, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'油门踏板位置传感器2 信号线路', 3, N'1,2,3,4,5', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (4, N'油门踏板位置传感器信号线路', 3, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'进气压力传感器信号线路', 4, N'1,2,3,4,5', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'进气温度传感器信号线路', 4, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'冷却液温度传器信号线路', 4, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'后氧传感器信号线路', 5, N'1,2,3,4,5', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'前氧传感器信号线路', 5, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'活性炭罐电磁阀控制线路', 6, N'1,2,3,4', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'爆震传感器信号线路', 6, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'霍尔传感器信号线路', 6, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'输入转速传感器信号线路', 7, N'1,2,3,4,5', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'输出转速传感器信号线路', 7, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'齿轮油温度传感器信号线路', 7, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (4, N'多功能开关信号线路', 7, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'空调继电器控制线路', 8, N'1,2,3,4', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'空调高压传感器信号线路', 8, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'空调器ECU和发动机ECU信号线', 8, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (4, N'蒸发器出风口温度传感器线路 ', 8, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'鼓风机开关三档线路', 9, N'1,2,3', 1, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'鼓风机电阻一档线路', 9, N'1,2,3', 1, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'左前转速传感器线路', 10, N'1,2,3,4,5', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'左后转速传感器线路', 10, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'右后转速传感器线路', 10, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (4, N'ABS系统 CAN-L线路', 10, N'1,2,3', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'组合仪表CAN-H线路', 11, N'1,2,3', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'燃油存量传感器线路', 11, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'车外温度传感器线路', 11, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (4, N'机油油压开关线路', 11, N'1,2,3,4,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'左前低音喇叭线路', 12, N'1,2,3', 1, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'右前低音喇叭线路', 12, N'1,2,3', 1, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'左转向开关信号线路', 13, N'1,2,3,5', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'左转向开关信号线路', 13, N'1,2,3,5', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'危险警告灯开关信号线路', 13, N'1,2,3', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (4, N'右侧转向信号灯线路', 13, N'1,2,3', 1, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'倒车灯线路', 14, N'1,2,3', 1, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'制动灯线路', 14, N'1,2,3', 1, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'刹车制动信号线路', 14, N'1,2,3', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'驾驶员侧中央门锁开关线路', 16, N'1,2,3,4', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'左后车窗升降开关线路', 16, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'左前车窗升降开关线路', 16, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'副驾驶员车窗升降开关线路', 17, N'1,2,3,4', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'副驾驶员侧中央门锁上锁单元线路', 17, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'副驾驶员侧车门接触开关线路', 17, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'左后车门车窗升降器开关线路', 18, N'1,2,3,4', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'左后车门中控锁马达线路', 18, N'1,2,3', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'左后车门接触开关线路 ', 18, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'右后车门车窗升降器开关', 19, N'1,2,3,4', 0, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'右后车门接触开关线路', 19, N'1,2,3,4', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (3, N'右后车门中控锁电机线路', 19, N'1,2,3', 0, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'车外灯开关大灯线路', 15, N'1,2,3', 1, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'左侧后雾灯线路', 15, N'1,2,3', 1, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (1, N'车前挡风玻璃清洗泵控制线', 20, N'1,2,3', 1, N'')
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (2, N'雨刮刮水器控制线', 20, N'1,2,3', 1, NULL)
-INSERT [dbo].[FaultPoint] ([Id], [Name], [ModuleId], [PatternList], [NormalIsBreak], [PointMemo]) VALUES (4, N'发动机转速信号线路', 2, N'1,2,3,4,5', 0, NULL)
-/****** Object:  Table [dbo].[FaultPattern]    Script Date: 05/08/2019 23:37:52 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[FaultPattern](
-	[OrderId] [int] IDENTITY(1,1) NOT NULL,
-	[OrderName] [nvarchar](50) NULL,
- CONSTRAINT [PK_FaultPattern] PRIMARY KEY CLUSTERED 
-(
-	[OrderId] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[FaultPattern] ON
-INSERT [dbo].[FaultPattern] ([OrderId], [OrderName]) VALUES (1, N'通路')
-INSERT [dbo].[FaultPattern] ([OrderId], [OrderName]) VALUES (2, N'断路')
-INSERT [dbo].[FaultPattern] ([OrderId], [OrderName]) VALUES (3, N'不稳定状态')
-INSERT [dbo].[FaultPattern] ([OrderId], [OrderName]) VALUES (4, N'虚接')
-INSERT [dbo].[FaultPattern] ([OrderId], [OrderName]) VALUES (5, N'短路')
-SET IDENTITY_INSERT [dbo].[FaultPattern] OFF
-/****** Object:  Table [dbo].[CheckInfo]    Script Date: 05/08/2019 23:37:52 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[CheckInfo](
-	[RecordId] [int] IDENTITY(1,1) NOT NULL,
-	[TesterNO] [nvarchar](50) NOT NULL,
-	[TesterName] [nvarchar](50) NOT NULL,
-	[BeginTime] [datetime] NOT NULL,
-	[EndTime] [datetime] NOT NULL,
-	[TestTimes] [int] NOT NULL,
-	[Score] [nvarchar](50) NOT NULL,
-	[CheckerNO] [nvarchar](20) NOT NULL,
-	[CheckerName] [nvarchar](50) NOT NULL,
-	[Memo] [text] NULL,
- CONSTRAINT [PK_CheckTable] PRIMARY KEY CLUSTERED 
-(
-	[RecordId] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[CheckInfo] ON
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (1, N'20141220', N'张三', CAST(0x0000A40B0083D600 AS DateTime), CAST(0x0000A40B009C8E20 AS DateTime), 3, N'8.5', N'20141224', N'国泰安', N'提示信息')
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (4, N'20141220', N'张三', CAST(0x0000A40B0083D600 AS DateTime), CAST(0x0000A40B009C8E20 AS DateTime), 3, N'8.5', N'20141224', N'国泰安', N'提示信息')
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (26, N'20141220', N'ckb', CAST(0x0000A43C00B9CC10 AS DateTime), CAST(0x0000A43C00BA1CEC AS DateTime), 0, N'3', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (27, N'20141220', N'ckb', CAST(0x0000A43C00BE81EC AS DateTime), CAST(0x0000A43C00BEBC84 AS DateTime), 0, N'3', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (28, N'20141220', N'ckb', CAST(0x0000A43C00EB5168 AS DateTime), CAST(0x0000A43C00EB97B8 AS DateTime), 0, N'1', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (29, N'20141220', N'ckb', CAST(0x0000A43C00ECCF70 AS DateTime), CAST(0x0000A43C00ECFACC AS DateTime), 0, N'1', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (30, N'20141220', N'ckb', CAST(0x0000A43C010094C4 AS DateTime), CAST(0x0000A43C010161D8 AS DateTime), 0, N'1', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (66, N'20141220', N'ckb', CAST(0x0000A44F00F74658 AS DateTime), CAST(0x0000A44F00F77790 AS DateTime), 4, N'1', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (67, N'20141220', N'ckb', CAST(0x0000A44F00F8F340 AS DateTime), CAST(0x0000A44F00F91C44 AS DateTime), 4, N'1', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (68, N'20141220', N'ckb', CAST(0x0000A44F00F9CD38 AS DateTime), CAST(0x0000A44F00F9F510 AS DateTime), 4, N'0', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (69, N'20141220', N'ckb', CAST(0x0000A44F00FBB008 AS DateTime), CAST(0x0000A44F00FBDC90 AS DateTime), 4, N'1', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (70, N'20141220', N'ckb', CAST(0x0000A44F00FD9080 AS DateTime), CAST(0x0000A44F00FDC9EC AS DateTime), 4, N'2', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (71, N'20141220', N'ckb', CAST(0x0000A4500108C414 AS DateTime), CAST(0x0000A45001090938 AS DateTime), 4, N'2', N'200901800', N'程坤波', NULL)
-INSERT [dbo].[CheckInfo] ([RecordId], [TesterNO], [TesterName], [BeginTime], [EndTime], [TestTimes], [Score], [CheckerNO], [CheckerName], [Memo]) VALUES (72, N'20141220', N'ckb', CAST(0x0000A56F017ADAB8 AS DateTime), CAST(0x0000A56F017B0998 AS DateTime), 3, N'1', N'200901800', N'程坤波', N'')
-SET IDENTITY_INSERT [dbo].[CheckInfo] OFF
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : ckb-DB
+Source Server Version : 50711
+Source Host           : localhost:3306
+Source Database       : jxcar
+
+Target Server Type    : MYSQL
+Target Server Version : 50711
+File Encoding         : 65001
+
+Date: 2019-05-09 21:14:20
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `checkinfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `checkinfo`;
+CREATE TABLE `checkinfo` (
+  `RecordId` int(11) DEFAULT NULL,
+  `TesterNO` varchar(50) DEFAULT NULL,
+  `TesterName` varchar(50) DEFAULT NULL,
+  `BeginTime` timestamp NULL DEFAULT NULL,
+  `EndTime` timestamp NULL DEFAULT NULL,
+  `TestTimes` int(11) DEFAULT NULL,
+  `Score` varchar(50) DEFAULT NULL,
+  `CheckerNO` varchar(20) DEFAULT NULL,
+  `CheckerName` varchar(50) DEFAULT NULL,
+  `Memo` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of checkinfo
+-- ----------------------------
+INSERT INTO `checkinfo` VALUES ('1', '20141220', '张三', '2014-12-24 08:00:00', '2014-12-24 09:30:00', '3', '8.5', '20141224', '国泰安', '提示信息');
+INSERT INTO `checkinfo` VALUES ('4', '20141220', '张三', '2014-12-24 08:00:00', '2014-12-24 09:30:00', '3', '8.5', '20141224', '国泰安', '提示信息');
+INSERT INTO `checkinfo` VALUES ('26', '20141220', 'ckb', '2015-02-11 11:16:28', '2015-02-11 11:17:37', '0', '3', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('27', '20141220', 'ckb', '2015-02-11 11:33:37', '2015-02-11 11:34:27', '0', '3', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('28', '20141220', 'ckb', '2015-02-11 14:16:46', '2015-02-11 14:17:46', '0', '1', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('29', '20141220', 'ckb', '2015-02-11 14:22:12', '2015-02-11 14:22:49', '0', '1', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('30', '20141220', 'ckb', '2015-02-11 15:34:11', '2015-02-11 15:37:06', '0', '1', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('66', '20141220', 'ckb', '2015-03-02 15:00:18', '2015-03-02 15:01:00', '4', '1', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('67', '20141220', 'ckb', '2015-03-02 15:06:24', '2015-03-02 15:06:59', '4', '1', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('68', '20141220', 'ckb', '2015-03-02 15:09:30', '2015-03-02 15:10:04', '4', '0', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('69', '20141220', 'ckb', '2015-03-02 15:16:22', '2015-03-02 15:17:00', '4', '1', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('70', '20141220', 'ckb', '2015-03-02 15:23:12', '2015-03-02 15:24:01', '4', '2', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('71', '20141220', 'ckb', '2015-03-03 16:03:59', '2015-03-03 16:04:58', '4', '2', '200901800', '程坤波', null);
+INSERT INTO `checkinfo` VALUES ('72', '20141220', 'ckb', '2015-12-15 22:59:22', '2015-12-15 23:00:02', '3', '1', '200901800', '程坤波', '');
+
+-- ----------------------------
+-- Table structure for `faultpattern`
+-- ----------------------------
+DROP TABLE IF EXISTS `faultpattern`;
+CREATE TABLE `faultpattern` (
+  `OrderId` int(11) DEFAULT NULL,
+  `OrderName` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of faultpattern
+-- ----------------------------
+INSERT INTO `faultpattern` VALUES ('1', '通路');
+INSERT INTO `faultpattern` VALUES ('2', '断路');
+INSERT INTO `faultpattern` VALUES ('3', '不稳定状态');
+INSERT INTO `faultpattern` VALUES ('4', '虚接');
+INSERT INTO `faultpattern` VALUES ('5', '短路');
+
+-- ----------------------------
+-- Table structure for `faultpoint`
+-- ----------------------------
+DROP TABLE IF EXISTS `faultpoint`;
+CREATE TABLE `faultpoint` (
+  `Id` int(11) DEFAULT NULL,
+  `Name` varchar(100) DEFAULT NULL,
+  `ModuleId` int(11) DEFAULT NULL,
+  `PatternList` varchar(50) DEFAULT NULL,
+  `NormalIsBreak` tinyint(1) DEFAULT NULL,
+  `PointMemo` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of faultpoint
+-- ----------------------------
+INSERT INTO `faultpoint` VALUES ('1', '发动机转速信号线路', '1', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('2', '2缸点火控制信号线路', '1', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '4缸点火控制信号线路', '1', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '燃油泵继电器控制线路', '2', '1,2,3,4,5', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '1缸喷油嘴控制线路', '2', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '3缸喷油嘴控制线路', '2', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '节气门角度传感器1信号线路', '3', '1,2,3,4,5', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '节气门角度传感器信号线路', '3', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '油门踏板位置传感器2 信号线路', '3', '1,2,3,4,5', '0', '');
+INSERT INTO `faultpoint` VALUES ('4', '油门踏板位置传感器信号线路', '3', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '进气压力传感器信号线路', '4', '1,2,3,4,5', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '进气温度传感器信号线路', '4', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '冷却液温度传器信号线路', '4', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '后氧传感器信号线路', '5', '1,2,3,4,5', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '前氧传感器信号线路', '5', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '活性炭罐电磁阀控制线路', '6', '1,2,3,4', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '爆震传感器信号线路', '6', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '霍尔传感器信号线路', '6', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '输入转速传感器信号线路', '7', '1,2,3,4,5', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '输出转速传感器信号线路', '7', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '齿轮油温度传感器信号线路', '7', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('4', '多功能开关信号线路', '7', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '空调继电器控制线路', '8', '1,2,3,4', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '空调高压传感器信号线路', '8', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '空调器ECU和发动机ECU信号线', '8', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('4', '蒸发器出风口温度传感器线路 ', '8', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '鼓风机开关三档线路', '9', '1,2,3', '1', '');
+INSERT INTO `faultpoint` VALUES ('2', '鼓风机电阻一档线路', '9', '1,2,3', '1', null);
+INSERT INTO `faultpoint` VALUES ('1', '左前转速传感器线路', '10', '1,2,3,4,5', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '左后转速传感器线路', '10', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '右后转速传感器线路', '10', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('4', 'ABS系统 CAN-L线路', '10', '1,2,3', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '组合仪表CAN-H线路', '11', '1,2,3', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '燃油存量传感器线路', '11', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '车外温度传感器线路', '11', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('4', '机油油压开关线路', '11', '1,2,3,4,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '左前低音喇叭线路', '12', '1,2,3', '1', '');
+INSERT INTO `faultpoint` VALUES ('2', '右前低音喇叭线路', '12', '1,2,3', '1', null);
+INSERT INTO `faultpoint` VALUES ('1', '左转向开关信号线路', '13', '1,2,3,5', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '左转向开关信号线路', '13', '1,2,3,5', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '危险警告灯开关信号线路', '13', '1,2,3', '0', null);
+INSERT INTO `faultpoint` VALUES ('4', '右侧转向信号灯线路', '13', '1,2,3', '1', null);
+INSERT INTO `faultpoint` VALUES ('1', '倒车灯线路', '14', '1,2,3', '1', '');
+INSERT INTO `faultpoint` VALUES ('2', '制动灯线路', '14', '1,2,3', '1', null);
+INSERT INTO `faultpoint` VALUES ('3', '刹车制动信号线路', '14', '1,2,3', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '驾驶员侧中央门锁开关线路', '16', '1,2,3,4', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '左后车窗升降开关线路', '16', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '左前车窗升降开关线路', '16', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '副驾驶员车窗升降开关线路', '17', '1,2,3,4', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '副驾驶员侧中央门锁上锁单元线路', '17', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '副驾驶员侧车门接触开关线路', '17', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '左后车门车窗升降器开关线路', '18', '1,2,3,4', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '左后车门中控锁马达线路', '18', '1,2,3', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '左后车门接触开关线路 ', '18', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '右后车门车窗升降器开关', '19', '1,2,3,4', '0', '');
+INSERT INTO `faultpoint` VALUES ('2', '右后车门接触开关线路', '19', '1,2,3,4', '0', null);
+INSERT INTO `faultpoint` VALUES ('3', '右后车门中控锁电机线路', '19', '1,2,3', '0', null);
+INSERT INTO `faultpoint` VALUES ('1', '车外灯开关大灯线路', '15', '1,2,3', '1', '');
+INSERT INTO `faultpoint` VALUES ('2', '左侧后雾灯线路', '15', '1,2,3', '1', null);
+INSERT INTO `faultpoint` VALUES ('1', '车前挡风玻璃清洗泵控制线', '20', '1,2,3', '1', '');
+INSERT INTO `faultpoint` VALUES ('2', '雨刮刮水器控制线', '20', '1,2,3', '1', null);
+INSERT INTO `faultpoint` VALUES ('4', '发动机转速信号线路', '2', '1,2,3,4,5', '0', null);
+
+-- ----------------------------
+-- Table structure for `hisdata`
+-- ----------------------------
+DROP TABLE IF EXISTS `hisdata`;
+CREATE TABLE `hisdata` (
+  `Id` int(11) DEFAULT NULL,
+  `ModuleId` int(11) DEFAULT NULL,
+  `DataTypeId` int(11) DEFAULT NULL,
+  `DataTypeName` varchar(50) DEFAULT NULL,
+  `Value` varchar(50) DEFAULT NULL,
+  `Time` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hisdata
+-- ----------------------------
+INSERT INTO `hisdata` VALUES ('1', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:25:53');
+INSERT INTO `hisdata` VALUES ('2', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:25:53');
+INSERT INTO `hisdata` VALUES ('3', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:25:56');
+INSERT INTO `hisdata` VALUES ('4', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:25:56');
+INSERT INTO `hisdata` VALUES ('5', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:25:58');
+INSERT INTO `hisdata` VALUES ('6', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:25:58');
+INSERT INTO `hisdata` VALUES ('7', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:26:00');
+INSERT INTO `hisdata` VALUES ('8', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:26:00');
+INSERT INTO `hisdata` VALUES ('9', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:26:03');
+INSERT INTO `hisdata` VALUES ('10', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:26:03');
+INSERT INTO `hisdata` VALUES ('11', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:26:58');
+INSERT INTO `hisdata` VALUES ('12', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:26:58');
+INSERT INTO `hisdata` VALUES ('13', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:27:36');
+INSERT INTO `hisdata` VALUES ('14', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:27:36');
+INSERT INTO `hisdata` VALUES ('15', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:27:38');
+INSERT INTO `hisdata` VALUES ('16', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:27:38');
+INSERT INTO `hisdata` VALUES ('17', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:27:40');
+INSERT INTO `hisdata` VALUES ('18', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:27:40');
+INSERT INTO `hisdata` VALUES ('19', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:27:43');
+INSERT INTO `hisdata` VALUES ('20', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:27:43');
+INSERT INTO `hisdata` VALUES ('21', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:27:45');
+INSERT INTO `hisdata` VALUES ('22', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:27:45');
+INSERT INTO `hisdata` VALUES ('23', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:27:47');
+INSERT INTO `hisdata` VALUES ('24', '0', '2', '发动机转速', '600rpm', '2015-03-31 11:27:47');
+INSERT INTO `hisdata` VALUES ('25', '0', '1', '发动机冷却液温度', '70℃', '2015-03-31 11:27:58');
+
+-- ----------------------------
+-- Table structure for `itempool`
+-- ----------------------------
+DROP TABLE IF EXISTS `itempool`;
+CREATE TABLE `itempool` (
+  `Id` int(11) DEFAULT NULL,
+  `ModuleId` int(11) DEFAULT NULL,
+  `FaultPointId` int(11) DEFAULT NULL,
+  `TypeNO` int(11) DEFAULT NULL,
+  `TypeName` varchar(50) DEFAULT NULL,
+  `Question` longtext,
+  `OptionA` longtext,
+  `OptionB` longtext,
+  `OptionC` longtext,
+  `OptionD` longtext,
+  `Answer` varchar(50) DEFAULT NULL,
+  `ScorePoint` double DEFAULT NULL,
+  `CheckerNO` varchar(50) DEFAULT NULL,
+  `CheckerName` varchar(50) DEFAULT NULL,
+  `MemoReminder` longtext,
+  `Time` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of itempool
+-- ----------------------------
+INSERT INTO `itempool` VALUES ('1', '1', '1', '1', '单项选择题                                             ', '你哪一年出生（）', '1989', '1999', '1987', '1988', 'A                   ', '1', '20141224            ', '国泰安                                               ', '若不知道可以回家问你父母', '2014-12-24 00:00:00');
+INSERT INTO `itempool` VALUES ('2', '1', '2', '1', '单项选择题', 'aa', null, null, null, null, 'aa', '2', '200901800', '程坤波', 'a', '2015-01-08 17:01:52');
+INSERT INTO `itempool` VALUES ('4', '1', '2', '3', '判断题', 'aa', null, null, null, null, 'aa', '2', '200901800', '程坤波', null, '2015-01-08 17:08:50');
+
+-- ----------------------------
+-- Table structure for `operatelog`
+-- ----------------------------
+DROP TABLE IF EXISTS `operatelog`;
+CREATE TABLE `operatelog` (
+  `RecordId` int(11) DEFAULT NULL,
+  `OperaterName` varchar(50) DEFAULT NULL,
+  `Message` longtext,
+  `Time` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of operatelog
+-- ----------------------------
+INSERT INTO `operatelog` VALUES ('1', 'ckb', '切换模块[发动机燃油喷射系统]失败', '2015-03-31 15:51:30');
+INSERT INTO `operatelog` VALUES ('2', 'ckb', '切换模块[发动机燃油喷射系统]失败', '2015-03-31 15:51:53');
+INSERT INTO `operatelog` VALUES ('3', 'ckb', '切换模块[发动机燃油喷射系统]成功', '2015-03-31 15:52:07');
+INSERT INTO `operatelog` VALUES ('4', 'ckb', '切换模块[发动机点火系统]失败', '2015-03-31 15:52:28');
+INSERT INTO `operatelog` VALUES ('5', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', '2015-03-31 15:56:27');
+INSERT INTO `operatelog` VALUES ('6', 'ckb', '成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', '2015-03-31 15:56:27');
+INSERT INTO `operatelog` VALUES ('7', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', '2015-03-31 15:56:27');
+INSERT INTO `operatelog` VALUES ('8', 'ckb', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', '2015-03-31 15:56:27');
+INSERT INTO `operatelog` VALUES ('9', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', '2015-03-31 15:56:43');
+INSERT INTO `operatelog` VALUES ('10', 'ckb', '成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', '2015-03-31 15:56:43');
+INSERT INTO `operatelog` VALUES ('11', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', '2015-03-31 15:56:43');
+INSERT INTO `operatelog` VALUES ('12', 'ckb', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', '2015-03-31 15:56:43');
+INSERT INTO `operatelog` VALUES ('13', 'ckb', '成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', '2015-03-31 15:56:59');
+INSERT INTO `operatelog` VALUES ('14', 'ckb', '成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', '2015-03-31 15:56:59');
+INSERT INTO `operatelog` VALUES ('15', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', '2015-03-31 15:56:59');
+INSERT INTO `operatelog` VALUES ('16', 'ckb', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', '2015-03-31 15:56:59');
+INSERT INTO `operatelog` VALUES ('17', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', '2015-03-31 15:57:08');
+INSERT INTO `operatelog` VALUES ('18', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', '2015-03-31 15:57:08');
+INSERT INTO `operatelog` VALUES ('19', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', '2015-03-31 15:57:08');
+INSERT INTO `operatelog` VALUES ('20', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', '2015-03-31 15:57:08');
+INSERT INTO `operatelog` VALUES ('21', 'ckb', '成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', '2015-03-31 15:57:58');
+INSERT INTO `operatelog` VALUES ('22', 'ckb', '成功设置故障[虚接]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', '2015-03-31 15:57:58');
+INSERT INTO `operatelog` VALUES ('23', 'ckb', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', '2015-03-31 15:57:58');
+INSERT INTO `operatelog` VALUES ('24', 'ckb', '成功设置故障[短路]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', '2015-03-31 15:57:58');
+INSERT INTO `operatelog` VALUES ('25', 'ckb', '切换模块[发动机燃油喷射系统]成功', '2015-03-31 16:10:26');
+INSERT INTO `operatelog` VALUES ('26', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', '2015-03-31 16:11:39');
+INSERT INTO `operatelog` VALUES ('27', 'ckb', '成功设置故障[虚接]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', '2015-03-31 16:11:39');
+INSERT INTO `operatelog` VALUES ('28', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', '2015-03-31 16:11:39');
+INSERT INTO `operatelog` VALUES ('29', 'ckb', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', '2015-03-31 16:11:39');
+INSERT INTO `operatelog` VALUES ('30', 'ckb', '切换模块[发动机燃油喷射系统]成功', '2015-03-31 16:14:31');
+INSERT INTO `operatelog` VALUES ('31', 'ckb', '成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[燃油泵继电器控制线路]', '2015-03-31 16:15:26');
+INSERT INTO `operatelog` VALUES ('32', 'ckb', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[1缸喷油嘴控制线路]', '2015-03-31 16:15:27');
+INSERT INTO `operatelog` VALUES ('33', 'ckb', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[3缸喷油嘴控制线路]', '2015-03-31 16:15:27');
+INSERT INTO `operatelog` VALUES ('34', 'ckb', '成功设置故障[短路]:模块为[发动机燃油喷射系统],故障点为[发动机转速信号线路]', '2015-03-31 16:15:27');
+INSERT INTO `operatelog` VALUES ('35', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:17:45');
+INSERT INTO `operatelog` VALUES ('36', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:17:48');
+INSERT INTO `operatelog` VALUES ('37', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:17:48');
+INSERT INTO `operatelog` VALUES ('38', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:17:48');
+INSERT INTO `operatelog` VALUES ('39', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:17:59');
+INSERT INTO `operatelog` VALUES ('40', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:18:04');
+INSERT INTO `operatelog` VALUES ('41', '平板用户', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:18:25');
+INSERT INTO `operatelog` VALUES ('42', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:18:32');
+INSERT INTO `operatelog` VALUES ('43', '平板用户', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[2]', '2015-03-31 16:18:55');
+INSERT INTO `operatelog` VALUES ('44', '平板用户', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[2]', '2015-03-31 16:18:55');
+INSERT INTO `operatelog` VALUES ('45', '平板用户', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3]', '2015-03-31 16:19:29');
+INSERT INTO `operatelog` VALUES ('46', '平板用户', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[3]', '2015-03-31 16:20:31');
+INSERT INTO `operatelog` VALUES ('47', '平板用户', '成功设置故障[断路]:模块为[发动机燃油喷射系统],故障点为[3]', '2015-03-31 16:20:47');
+INSERT INTO `operatelog` VALUES ('48', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[3]', '2015-03-31 16:20:57');
+INSERT INTO `operatelog` VALUES ('49', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[2]', '2015-03-31 16:21:18');
+INSERT INTO `operatelog` VALUES ('50', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:21:48');
+INSERT INTO `operatelog` VALUES ('51', '平板用户', '成功设置故障[不稳定状态]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:22:17');
+INSERT INTO `operatelog` VALUES ('52', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:22:27');
+INSERT INTO `operatelog` VALUES ('53', '平板用户', '成功设置故障[]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:22:28');
+INSERT INTO `operatelog` VALUES ('54', '平板用户', '成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:23:09');
+INSERT INTO `operatelog` VALUES ('55', '平板用户', '成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:23:10');
+INSERT INTO `operatelog` VALUES ('56', '平板用户', '成功设置故障[通路]:模块为[发动机燃油喷射系统],故障点为[1]', '2015-03-31 16:23:47');
+INSERT INTO `operatelog` VALUES ('57', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 17:36:30');
+INSERT INTO `operatelog` VALUES ('58', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 17:36:33');
+INSERT INTO `operatelog` VALUES ('59', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 17:36:35');
+INSERT INTO `operatelog` VALUES ('60', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 17:36:37');
+INSERT INTO `operatelog` VALUES ('61', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 17:36:39');
+INSERT INTO `operatelog` VALUES ('62', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 17:36:42');
+INSERT INTO `operatelog` VALUES ('63', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[1]', '2015-03-31 17:40:53');
+INSERT INTO `operatelog` VALUES ('64', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[1]', '2015-03-31 17:40:58');
+INSERT INTO `operatelog` VALUES ('65', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[1]', '2015-03-31 17:41:03');
+INSERT INTO `operatelog` VALUES ('66', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', '2015-03-31 17:41:07');
+INSERT INTO `operatelog` VALUES ('67', '平板用户', '设置故障[短路]失败:模块为[未连接],故障点为[1]', '2015-03-31 17:41:12');
+INSERT INTO `operatelog` VALUES ('68', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[1]', '2015-03-31 17:41:17');
+INSERT INTO `operatelog` VALUES ('69', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[2]', '2015-03-31 17:41:32');
+INSERT INTO `operatelog` VALUES ('70', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[2]', '2015-03-31 17:41:36');
+INSERT INTO `operatelog` VALUES ('71', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[3]', '2015-03-31 17:41:55');
+INSERT INTO `operatelog` VALUES ('72', '平板用户', '设置故障[短路]失败:模块为[未连接],故障点为[3]', '2015-03-31 17:41:57');
+INSERT INTO `operatelog` VALUES ('73', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 17:42:00');
+INSERT INTO `operatelog` VALUES ('74', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:01:58');
+INSERT INTO `operatelog` VALUES ('75', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:02:02');
+INSERT INTO `operatelog` VALUES ('76', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:02:05');
+INSERT INTO `operatelog` VALUES ('77', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:02:57');
+INSERT INTO `operatelog` VALUES ('78', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:03:00');
+INSERT INTO `operatelog` VALUES ('79', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:03:02');
+INSERT INTO `operatelog` VALUES ('80', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:03:07');
+INSERT INTO `operatelog` VALUES ('81', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:03:14');
+INSERT INTO `operatelog` VALUES ('82', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:03:16');
+INSERT INTO `operatelog` VALUES ('83', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:03:59');
+INSERT INTO `operatelog` VALUES ('84', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:04:02');
+INSERT INTO `operatelog` VALUES ('85', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:04:04');
+INSERT INTO `operatelog` VALUES ('86', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:04:06');
+INSERT INTO `operatelog` VALUES ('87', '平板用户', '设置故障[短路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:04:09');
+INSERT INTO `operatelog` VALUES ('88', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:04:11');
+INSERT INTO `operatelog` VALUES ('89', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:04:13');
+INSERT INTO `operatelog` VALUES ('90', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:04:16');
+INSERT INTO `operatelog` VALUES ('91', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:04:18');
+INSERT INTO `operatelog` VALUES ('92', '平板用户', '设置故障[短路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:04:20');
+INSERT INTO `operatelog` VALUES ('93', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:04:27');
+INSERT INTO `operatelog` VALUES ('94', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:04:31');
+INSERT INTO `operatelog` VALUES ('95', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:04:34');
+INSERT INTO `operatelog` VALUES ('96', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:10:36');
+INSERT INTO `operatelog` VALUES ('97', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:10:39');
+INSERT INTO `operatelog` VALUES ('98', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:10:42');
+INSERT INTO `operatelog` VALUES ('99', '平板用户', '设置故障[短路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:11:03');
+INSERT INTO `operatelog` VALUES ('100', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[4]', '2015-03-31 18:11:05');
+INSERT INTO `operatelog` VALUES ('101', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[4]', '2015-03-31 18:11:07');
+INSERT INTO `operatelog` VALUES ('102', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[4]', '2015-03-31 18:11:10');
+INSERT INTO `operatelog` VALUES ('103', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[4]', '2015-03-31 18:11:12');
+INSERT INTO `operatelog` VALUES ('104', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:11:14');
+INSERT INTO `operatelog` VALUES ('105', '平板用户', '设置故障[短路]失败:模块为[未连接],故障点为[4]', '2015-03-31 18:11:17');
+INSERT INTO `operatelog` VALUES ('106', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:11:47');
+INSERT INTO `operatelog` VALUES ('107', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:11:52');
+INSERT INTO `operatelog` VALUES ('108', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:11:55');
+INSERT INTO `operatelog` VALUES ('109', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:11:57');
+INSERT INTO `operatelog` VALUES ('110', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:12:04');
+INSERT INTO `operatelog` VALUES ('111', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:12:06');
+INSERT INTO `operatelog` VALUES ('112', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:12:08');
+INSERT INTO `operatelog` VALUES ('113', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:12:10');
+INSERT INTO `operatelog` VALUES ('114', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:12:13');
+INSERT INTO `operatelog` VALUES ('115', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:12:16');
+INSERT INTO `operatelog` VALUES ('116', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:12:19');
+INSERT INTO `operatelog` VALUES ('117', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:12:21');
+INSERT INTO `operatelog` VALUES ('118', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:13:41');
+INSERT INTO `operatelog` VALUES ('119', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:13:44');
+INSERT INTO `operatelog` VALUES ('120', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:13:46');
+INSERT INTO `operatelog` VALUES ('121', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:13:48');
+INSERT INTO `operatelog` VALUES ('122', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:14:30');
+INSERT INTO `operatelog` VALUES ('123', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:14:40');
+INSERT INTO `operatelog` VALUES ('124', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:14:42');
+INSERT INTO `operatelog` VALUES ('125', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:14:44');
+INSERT INTO `operatelog` VALUES ('126', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[2]', '2015-03-31 18:14:47');
+INSERT INTO `operatelog` VALUES ('127', '平板用户', '设置故障[]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:14:50');
+INSERT INTO `operatelog` VALUES ('128', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:15:07');
+INSERT INTO `operatelog` VALUES ('129', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:15:10');
+INSERT INTO `operatelog` VALUES ('130', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:15:12');
+INSERT INTO `operatelog` VALUES ('131', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:15:15');
+INSERT INTO `operatelog` VALUES ('132', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:17:28');
+INSERT INTO `operatelog` VALUES ('133', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:17:31');
+INSERT INTO `operatelog` VALUES ('134', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:17:33');
+INSERT INTO `operatelog` VALUES ('135', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:17:37');
+INSERT INTO `operatelog` VALUES ('136', '平板用户', '设置故障[虚接]失败:模块为[未连接],故障点为[3]', '2015-03-31 18:17:39');
+INSERT INTO `operatelog` VALUES ('137', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:19:14');
+INSERT INTO `operatelog` VALUES ('138', '平板用户', '设置故障[]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:19:17');
+INSERT INTO `operatelog` VALUES ('139', '平板用户', '设置故障[不稳定状态]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:19:22');
+INSERT INTO `operatelog` VALUES ('140', '平板用户', '设置故障[断路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:19:26');
+INSERT INTO `operatelog` VALUES ('141', '平板用户', '设置故障[通路]失败:模块为[未连接],故障点为[1]', '2015-03-31 18:19:34');
+INSERT INTO `operatelog` VALUES ('142', 'ckb', '成功设置故障[断路]:模块为[未连接],故障点为[3缸喷油嘴控制线路]', '2015-12-13 14:26:20');
+INSERT INTO `operatelog` VALUES ('143', 'ckb', '成功设置故障[断路]:模块为[未连接],故障点为[燃油泵继电器控制线路]', '2015-12-13 14:26:43');
+INSERT INTO `operatelog` VALUES ('144', 'ckb', '成功设置故障[通路]:模块为[未连接],故障点为[3缸喷油嘴控制线路]', '2015-12-13 14:26:50');
+
+-- ----------------------------
+-- Table structure for `serverinfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `serverinfo`;
+CREATE TABLE `serverinfo` (
+  `Id` int(11) DEFAULT NULL,
+  `IP` varchar(50) DEFAULT NULL,
+  `Port1` int(11) DEFAULT NULL,
+  `Port2` int(11) DEFAULT NULL,
+  `ShareAddress` varchar(50) DEFAULT NULL,
+  `Memo` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of serverinfo
+-- ----------------------------
+INSERT INTO `serverinfo` VALUES ('1', '192.168.0.101', '8080', '8081', 'www.hao123.com', '通信配置信息');
+
+-- ----------------------------
+-- Table structure for `sysmodule`
+-- ----------------------------
+DROP TABLE IF EXISTS `sysmodule`;
+CREATE TABLE `sysmodule` (
+  `Id` int(11) DEFAULT NULL,
+  `ModuleName` varchar(50) DEFAULT NULL,
+  `CarClass` varchar(50) DEFAULT NULL,
+  `schematic` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sysmodule
+-- ----------------------------
+INSERT INTO `sysmodule` VALUES ('1', '发动机点火系统', '2013款桑塔纳1.6L 自动 舒适版', '发动机点火系统.swf');
+INSERT INTO `sysmodule` VALUES ('2', '发动机燃油喷射系统', '2013款桑塔纳1.6L 自动 舒适版', '发动机燃油喷射系统.swf');
+INSERT INTO `sysmodule` VALUES ('3', '节气门控制单元与油门踏板', '2013款桑塔纳1.6L 自动 舒适版', '节气门控制单元与油门踏板.swf');
+INSERT INTO `sysmodule` VALUES ('4', '进气压力进气温度和水温度传感器', '2013款桑塔纳1.6L 自动 舒适版', '进气压力进气温度和水温度传感器.swf');
+INSERT INTO `sysmodule` VALUES ('5', '前后氧传感器', '2013款桑塔纳1.6L 自动 舒适版', '前后氧传感器.png');
+INSERT INTO `sysmodule` VALUES ('6', '霍尔爆震传感器和碳罐电磁阀', '2013款桑塔纳1.6L 自动 舒适版', '霍尔爆震传感器和碳罐电磁阀.png');
+INSERT INTO `sysmodule` VALUES ('7', '变速器系统', '2013款桑塔纳1.6L 自动 舒适版', '变速器系统.png');
+INSERT INTO `sysmodule` VALUES ('8', '空调控制系统', '2013款桑塔纳1.6L 自动 舒适版', '空调控制系统.png');
+INSERT INTO `sysmodule` VALUES ('9', '空调鼓风机控制系统', '2013款桑塔纳1.6L 自动 舒适版', '空调鼓风机控制系统.png');
+INSERT INTO `sysmodule` VALUES ('10', 'ABS系统', '2013款桑塔纳1.6L 自动 舒适版', 'ABS系统.png');
+INSERT INTO `sysmodule` VALUES ('11', '组合仪表系统', '2013款桑塔纳1.6L 自动 舒适版', '组合仪表系统.png');
+INSERT INTO `sysmodule` VALUES ('12', '音响系统', '2013款桑塔纳1.6L 自动 舒适版', '音响系统.png');
+INSERT INTO `sysmodule` VALUES ('13', '危险及转向信号灯', '2013款桑塔纳1.6L 自动 舒适版', '危险及转向信号灯.png');
+INSERT INTO `sysmodule` VALUES ('14', '倒车刹车灯控制系统', '2013款桑塔纳1.6L 自动 舒适版', '倒车刹车灯控制系统.png');
+INSERT INTO `sysmodule` VALUES ('15', '车外灯光控制系统', '2013款桑塔纳1.6L 自动 舒适版', '车外灯光控制系统.png');
+INSERT INTO `sysmodule` VALUES ('16', '驾驶员侧车门控制系统', '2013款桑塔纳1.6L 自动 舒适版', '驾驶员侧车门控制系统.png');
+INSERT INTO `sysmodule` VALUES ('17', '副驾驶员侧车门控制系统', '2013款桑塔纳1.6L 自动 舒适版', '副驾驶员侧车门控制系统.png');
+INSERT INTO `sysmodule` VALUES ('18', '左后车门控制系统', '2013款桑塔纳1.6L 自动 舒适版', '左后车门控制系统.png');
+INSERT INTO `sysmodule` VALUES ('19', '右后车门控制系统', '2013款桑塔纳1.6L 自动 舒适版', '右后车门控制系统.png');
+INSERT INTO `sysmodule` VALUES ('20', '雨刮系统', '2013款桑塔纳1.6L 自动 舒适版', '雨刮系统.png');
+
+-- ----------------------------
+-- Table structure for `userinfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `userinfo`;
+CREATE TABLE `userinfo` (
+  `StudyNO` varchar(50) DEFAULT NULL,
+  `StudyName` varchar(50) DEFAULT NULL,
+  `IsMan` tinyint(1) DEFAULT NULL,
+  `UserName` varchar(50) DEFAULT NULL,
+  `PassWord` varchar(100) DEFAULT NULL,
+  `RoleId` int(11) DEFAULT NULL,
+  `RoleName` varchar(50) DEFAULT NULL,
+  `Mail` varchar(100) DEFAULT NULL,
+  `Userable` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of userinfo
+-- ----------------------------
+INSERT INTO `userinfo` VALUES ('02145', '张老师', '1', 'teacher1', '123456', '1', '教师', '811823922@qq.com', '1');
+INSERT INTO `userinfo` VALUES ('200901800', 'admin', '1', 'admin', '123456', '0', '管理员', '811823922@qq.com', '1');
+INSERT INTO `userinfo` VALUES ('2656', '李四', '1', 'student1', '123456', '2', '学生', '811823922@qq.com', '1');
