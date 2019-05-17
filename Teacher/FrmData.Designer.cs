@@ -55,177 +55,257 @@ namespace Teacher
 
         private void InitializeComponent()
         {
-            this.components = new Container();
-            ComponentResourceManager manager = new ComponentResourceManager(typeof(FrmData));
-            this.barManager1 = new BarManager(this.components);
-            this.bar2 = new Bar();
-            this.barLargeButtonItem1 = new BarLargeButtonItem();
-            this.barLargeButtonItem2 = new BarLargeButtonItem();
-            this.barDockControlTop = new BarDockControl();
-            this.barDockControlBottom = new BarDockControl();
-            this.barDockControlLeft = new BarDockControl();
-            this.barDockControlRight = new BarDockControl();
-            this.panelControl2 = new PanelControl();
-            this.gridControl2 = new GridControl();
-            this.gridView2 = new GridView();
-            this.gridColumn9 = new GridColumn();
-            this.gridColumn10 = new GridColumn();
-            this.gridColumn11 = new GridColumn();
-            this.gridColumn12 = new GridColumn();
-            this.gridColumn1 = new GridColumn();
-            this.gridColumn5 = new GridColumn();
-            this.gridColumn6 = new GridColumn();
-            this.gridColumn7 = new GridColumn();
-            this.gridColumn8 = new GridColumn();
-            this.barLargeButtonItem3 = new BarLargeButtonItem();
-            this.barManager1.BeginInit();
-            this.panelControl2.BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.barLargeButtonItem3 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem2 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            this.gridControl2.BeginInit();
-            this.gridView2.BeginInit();
-            base.SuspendLayout();
-            this.barManager1.Bars.AddRange(new Bar[] { this.bar2 });
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar2});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new BarItem[] { this.barLargeButtonItem1, this.barLargeButtonItem2, this.barLargeButtonItem3 });
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barLargeButtonItem1,
+            this.barLargeButtonItem2,
+            this.barLargeButtonItem3});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 10;
+            // 
+            // bar2
+            // 
             this.bar2.BarName = "Main menu";
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
-            this.bar2.DockStyle = BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new LinkPersistInfo[] { new LinkPersistInfo(this.barLargeButtonItem3), new LinkPersistInfo(this.barLargeButtonItem1, true), new LinkPersistInfo(this.barLargeButtonItem2) });
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem1, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem2)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.DrawDragBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
+            // 
+            // barLargeButtonItem3
+            // 
+            this.barLargeButtonItem3.Caption = "清除历史数据";
+            this.barLargeButtonItem3.Id = 9;
+            this.barLargeButtonItem3.Name = "barLargeButtonItem3";
+            this.barLargeButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLargeButtonItem3_ItemClick);
+            // 
+            // barLargeButtonItem1
+            // 
             this.barLargeButtonItem1.Caption = "预览";
-            this.barLargeButtonItem1.Glyph = (Image) manager.GetObject("barLargeButtonItem1.Glyph");
             this.barLargeButtonItem1.Id = 6;
-            this.barLargeButtonItem1.LargeGlyph = (Image) manager.GetObject("barLargeButtonItem1.LargeGlyph");
             this.barLargeButtonItem1.Name = "barLargeButtonItem1";
-            this.barLargeButtonItem1.ItemClick += new ItemClickEventHandler(this.barLargeButtonItem1_ItemClick);
+            this.barLargeButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLargeButtonItem1_ItemClick);
+            // 
+            // barLargeButtonItem2
+            // 
             this.barLargeButtonItem2.Caption = "导出";
-            this.barLargeButtonItem2.Glyph = (Image) manager.GetObject("barLargeButtonItem2.Glyph");
             this.barLargeButtonItem2.Id = 7;
-            this.barLargeButtonItem2.LargeGlyph = (Image) manager.GetObject("barLargeButtonItem2.LargeGlyph");
             this.barLargeButtonItem2.Name = "barLargeButtonItem2";
-            this.barLargeButtonItem2.ItemClick += new ItemClickEventHandler(this.barLargeButtonItem2_ItemClick);
+            this.barLargeButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLargeButtonItem2_ItemClick);
+            // 
+            // barDockControlTop
+            // 
             this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = DockStyle.Top;
-            this.barDockControlTop.Location = new Point(0, 0);
-            this.barDockControlTop.Size = new Size(0x2cf, 60);
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(719, 24);
+            // 
+            // barDockControlBottom
+            // 
             this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = DockStyle.Bottom;
-            this.barDockControlBottom.Location = new Point(0, 0x1dc);
-            this.barDockControlBottom.Size = new Size(0x2cf, 0);
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 476);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(719, 0);
+            // 
+            // barDockControlLeft
+            // 
             this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = DockStyle.Left;
-            this.barDockControlLeft.Location = new Point(0, 60);
-            this.barDockControlLeft.Size = new Size(0, 0x1a0);
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 452);
+            // 
+            // barDockControlRight
+            // 
             this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = DockStyle.Right;
-            this.barDockControlRight.Location = new Point(0x2cf, 60);
-            this.barDockControlRight.Size = new Size(0, 0x1a0);
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(719, 24);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 452);
+            // 
+            // panelControl2
+            // 
             this.panelControl2.Controls.Add(this.gridControl2);
-            this.panelControl2.Dock = DockStyle.Fill;
-            this.panelControl2.Location = new Point(0, 60);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 24);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new Size(0x2cf, 0x1a0);
+            this.panelControl2.Size = new System.Drawing.Size(719, 452);
             this.panelControl2.TabIndex = 6;
-            this.gridControl2.Dock = DockStyle.Fill;
-            this.gridControl2.Location = new Point(2, 2);
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(2, 2);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new Size(0x2cb, 0x19c);
+            this.gridControl2.Size = new System.Drawing.Size(715, 448);
             this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new BaseView[] { this.gridView2 });
-            this.gridView2.Columns.AddRange(new GridColumn[] { this.gridColumn9, this.gridColumn10, this.gridColumn11, this.gridColumn12, this.gridColumn1 });
-            this.gridView2.FocusRectStyle = DrawFocusRectStyle.RowFullFocus;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn1});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.GroupSummary.AddRange(new GridSummaryItem[] { new GridGroupSummaryItem(SummaryItemType.None, "DataTypeId", null, ""), new GridGroupSummaryItem(SummaryItemType.None, "DataTypeName", null, "") });
+            this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "DataTypeId", null, ""),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "DataTypeName", null, "")});
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsCustomization.AllowColumnMoving = false;
             this.gridView2.OptionsCustomization.AllowFilter = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.ViewCaption = "历史数据";
+            // 
+            // gridColumn9
+            // 
             this.gridColumn9.Caption = "对象编号";
             this.gridColumn9.FieldName = "DataTypeId";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 1;
             this.gridColumn9.Width = 100;
+            // 
+            // gridColumn10
+            // 
             this.gridColumn10.Caption = "对象名";
             this.gridColumn10.FieldName = "DataTypeName";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 2;
-            this.gridColumn10.Width = 0xa1;
+            this.gridColumn10.Width = 161;
+            // 
+            // gridColumn11
+            // 
             this.gridColumn11.Caption = "测量值";
             this.gridColumn11.FieldName = "Value";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 3;
-            this.gridColumn11.Width = 0xa1;
+            this.gridColumn11.Width = 161;
+            // 
+            // gridColumn12
+            // 
             this.gridColumn12.Caption = "测量时间";
             this.gridColumn12.DisplayFormat.FormatString = "yyyy/MM/dd  HH:mm:ss";
-            this.gridColumn12.DisplayFormat.FormatType = FormatType.DateTime;
+            this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn12.FieldName = "Time";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 4;
-            this.gridColumn12.Width = 0xaf;
+            this.gridColumn12.Width = 175;
+            // 
+            // gridColumn1
+            // 
             this.gridColumn1.Caption = "编号";
             this.gridColumn1.FieldName = "Id";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 100;
+            // 
+            // gridColumn5
+            // 
             this.gridColumn5.Caption = "编号";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
+            // 
+            // gridColumn6
+            // 
             this.gridColumn6.Caption = "测量对象";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 1;
+            // 
+            // gridColumn7
+            // 
             this.gridColumn7.Caption = "测量参数";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 2;
+            // 
+            // gridColumn8
+            // 
             this.gridColumn8.Caption = "测量值";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 3;
-            this.barLargeButtonItem3.Caption = "清除历史数据";
-            this.barLargeButtonItem3.Glyph = (Image) manager.GetObject("barLargeButtonItem3.Glyph");
-            this.barLargeButtonItem3.Id = 9;
-            this.barLargeButtonItem3.LargeGlyph = (Image) manager.GetObject("barLargeButtonItem3.LargeGlyph");
-            this.barLargeButtonItem3.Name = "barLargeButtonItem3";
-            this.barLargeButtonItem3.ItemClick += new ItemClickEventHandler(this.barLargeButtonItem3_ItemClick);
-            base.AutoScaleDimensions = new SizeF(7f, 14f);
-            base.AutoScaleMode = AutoScaleMode.Font;
-            base.ClientSize = new Size(0x2cf, 0x1dc);
-            base.Controls.Add(this.panelControl2);
-            base.Controls.Add(this.barDockControlLeft);
-            base.Controls.Add(this.barDockControlRight);
-            base.Controls.Add(this.barDockControlBottom);
-            base.Controls.Add(this.barDockControlTop);
-            base.Name = "FrmData";
+            // 
+            // FrmData
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(719, 476);
+            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.Name = "FrmData";
             this.Text = "历史数据";
-            base.Load += new EventHandler(this.FrmData_Load);
-            this.barManager1.EndInit();
-            this.panelControl2.EndInit();
+            this.Load += new System.EventHandler(this.FrmData_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            this.gridControl2.EndInit();
-            this.gridView2.EndInit();
-            base.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
     }
 }

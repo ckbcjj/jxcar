@@ -28,6 +28,14 @@ E:\javawork\project\jxcar\Student\bin\Debug\DevExpress.XtraVerticalGrid.v13.2.dl
 E:\javawork\project\jxcar\Student\bin\Debug\BLL.pdb
 E:\javawork\project\jxcar\Student\obj\x86\Debug\Student.exe
 E:\javawork\project\jxcar\Student\obj\x86\Debug\Student.pdb
+D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.csprojAssemblyReference.cache
+D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.FrmChangePwd.resources
+D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.FrmCheck.resources
+D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.FrmReg.resources
+D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.FrmSetting.resources
+D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.Properties.Resources.resources
+D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.csproj.GenerateResource.cache
+D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.exe.licenses
 D:\workspace\mywork\JxCar\Student\bin\Debug\Student.exe.config
 D:\workspace\mywork\JxCar\Student\bin\Debug\Student.exe
 D:\workspace\mywork\JxCar\Student\bin\Debug\Student.pdb
@@ -171,8 +179,6 @@ D:\workspace\mywork\JxCar\Student\bin\Debug\es\DevExpress.XtraRichEdit.v18.1.res
 D:\workspace\mywork\JxCar\Student\bin\Debug\ja\DevExpress.XtraRichEdit.v18.1.resources.dll
 D:\workspace\mywork\JxCar\Student\bin\Debug\ru\DevExpress.XtraRichEdit.v18.1.resources.dll
 D:\workspace\mywork\JxCar\Student\bin\Debug\zh-Hans\DevExpress.XtraRichEdit.v18.1.resources.dll
-D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.Properties.Resources.resources
-D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.csproj.GenerateResource.cache
 D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.csproj.CoreCompileInputs.cache
 D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.csproj.CopyComplete
 D:\workspace\mywork\JxCar\Student\obj\x86\Debug\Student.exe
